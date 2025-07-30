@@ -1,0 +1,227 @@
+API Calls Log - Started: 2025-07-29T17:45:04.403Z
+2025-07-29T17:45:05.039Z GET https://www.googleapis.com/calendar/v3/users/me/calendarList - Status: 200 - Duration: 635ms
+{
+  "timestamp": "2025-07-29T17:45:05.039Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/calendar/v3/users/me/calendarList",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1202
+  },
+  "duration": 635
+}
+---
+2025-07-29T17:45:05.715Z GET https://www.googleapis.com/calendar/v3/calendars/primary - Status: 200 - Duration: 675ms
+{
+  "timestamp": "2025-07-29T17:45:05.715Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/calendar/v3/calendars/primary",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 244
+  },
+  "duration": 675
+}
+---
+2025-07-29T17:45:06.327Z GET https://www.googleapis.com/calendar/v3/calendars/primary/events?timeMin=2025-07-22T17:45:05.718Z&timeMax=2025-08-05T17:45:05.718Z&maxResults=10&singleEvents=true&orderBy=startTime - Status: 200 - Duration: 609ms
+{
+  "timestamp": "2025-07-29T17:45:06.327Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/calendar/v3/calendars/primary/events?timeMin=2025-07-22T17:45:05.718Z&timeMax=2025-08-05T17:45:05.718Z&maxResults=10&singleEvents=true&orderBy=startTime",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1616
+  },
+  "duration": 609
+}
+---
+2025-07-29T17:45:06.945Z POST https://www.googleapis.com/calendar/v3/calendars/primary/events - Status: 200 - Duration: 616ms
+{
+  "timestamp": "2025-07-29T17:45:06.945Z",
+  "method": "POST",
+  "url": "https://www.googleapis.com/calendar/v3/calendars/primary/events",
+  "requestData": {
+    "summary": "API Test Event 1753811106329",
+    "description": "This event was created by the Google Calendar API tester",
+    "start": {
+      "dateTime": "2025-07-29T18:45:06.329Z",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2025-07-29T19:45:06.329Z",
+      "timeZone": "America/New_York"
+    },
+    "reminders": {
+      "useDefault": false,
+      "overrides": [
+        {
+          "method": "email",
+          "minutes": 1440
+        },
+        {
+          "method": "popup",
+          "minutes": 10
+        }
+      ]
+    },
+    "location": "API Testing Lab",
+    "status": "confirmed"
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 928
+  },
+  "duration": 616
+}
+---
+2025-07-29T17:45:07.662Z GET https://www.googleapis.com/calendar/v3/calendars/primary/events/1u0nqq4gst5bnkikb8h67g06uo - Status: 200 - Duration: 715ms
+{
+  "timestamp": "2025-07-29T17:45:07.662Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/calendar/v3/calendars/primary/events/1u0nqq4gst5bnkikb8h67g06uo",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 928
+  },
+  "duration": 715
+}
+---
+2025-07-29T17:45:08.786Z PATCH https://www.googleapis.com/calendar/v3/calendars/primary/events/1u0nqq4gst5bnkikb8h67g06uo - Status: 200 - Duration: 1122ms
+{
+  "timestamp": "2025-07-29T17:45:08.786Z",
+  "method": "PATCH",
+  "url": "https://www.googleapis.com/calendar/v3/calendars/primary/events/1u0nqq4gst5bnkikb8h67g06uo",
+  "requestData": {
+    "summary": "Updated API Test Event 1753811107664",
+    "description": "This event was updated by the API tester",
+    "location": "Updated API Testing Lab",
+    "colorId": "2"
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 942
+  },
+  "duration": 1122
+}
+---
+2025-07-29T17:45:09.413Z POST https://www.googleapis.com/calendar/v3/calendars/primary/events - Status: 200 - Duration: 626ms
+{
+  "timestamp": "2025-07-29T17:45:09.413Z",
+  "method": "POST",
+  "url": "https://www.googleapis.com/calendar/v3/calendars/primary/events",
+  "requestData": {
+    "summary": "Weekly API Test Meeting 1753811108787",
+    "description": "This is a recurring event created by the API tester",
+    "start": {
+      "dateTime": "2025-07-29T19:45:08.787Z",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2025-07-29T20:15:08.787Z",
+      "timeZone": "America/New_York"
+    },
+    "recurrence": [
+      "RRULE:FREQ=WEEKLY;COUNT=3"
+    ],
+    "reminders": {
+      "useDefault": false,
+      "overrides": [
+        {
+          "method": "popup",
+          "minutes": 15
+        }
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 935
+  },
+  "duration": 626
+}
+---
+2025-07-29T17:45:10.016Z GET https://www.googleapis.com/calendar/v3/calendars/primary/events?q=test&maxResults=5 - Status: 200 - Duration: 602ms
+{
+  "timestamp": "2025-07-29T17:45:10.016Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/calendar/v3/calendars/primary/events?q=test&maxResults=5",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 5395
+  },
+  "duration": 602
+}
+---
+2025-07-29T17:45:10.555Z GET https://www.googleapis.com/calendar/v3/calendars/primary/events?q=meeting&maxResults=5 - Status: 200 - Duration: 537ms
+{
+  "timestamp": "2025-07-29T17:45:10.555Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/calendar/v3/calendars/primary/events?q=meeting&maxResults=5",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 10932
+  },
+  "duration": 537
+}
+---
+2025-07-29T17:45:11.094Z GET https://www.googleapis.com/calendar/v3/calendars/primary/events?q=API&maxResults=5 - Status: 200 - Duration: 538ms
+{
+  "timestamp": "2025-07-29T17:45:11.094Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/calendar/v3/calendars/primary/events?q=API&maxResults=5",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 2197
+  },
+  "duration": 538
+}
+---
+2025-07-29T17:45:11.569Z GET https://www.googleapis.com/calendar/v3/users/me/settings - Status: 200 - Duration: 474ms
+{
+  "timestamp": "2025-07-29T17:45:11.569Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/calendar/v3/users/me/settings",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1366
+  },
+  "duration": 474
+}
+---
+2025-07-29T17:45:12.272Z DELETE https://www.googleapis.com/calendar/v3/calendars/primary/events/1u0nqq4gst5bnkikb8h67g06uo - Status: 204 - Duration: 702ms
+{
+  "timestamp": "2025-07-29T17:45:12.272Z",
+  "method": "DELETE",
+  "url": "https://www.googleapis.com/calendar/v3/calendars/primary/events/1u0nqq4gst5bnkikb8h67g06uo",
+  "response": {
+    "status": 204,
+    "success": true,
+    "dataSize": 0
+  },
+  "duration": 702
+}
+---
+2025-07-29T17:45:13.087Z DELETE https://www.googleapis.com/calendar/v3/calendars/primary/events/ms22lab8ei53dhkkthvmutghes - Status: 204 - Duration: 814ms
+{
+  "timestamp": "2025-07-29T17:45:13.087Z",
+  "method": "DELETE",
+  "url": "https://www.googleapis.com/calendar/v3/calendars/primary/events/ms22lab8ei53dhkkthvmutghes",
+  "response": {
+    "status": 204,
+    "success": true,
+    "dataSize": 0
+  },
+  "duration": 814
+}
+---

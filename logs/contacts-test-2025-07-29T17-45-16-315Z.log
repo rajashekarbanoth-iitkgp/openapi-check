@@ -1,0 +1,87 @@
+👥 Google Contacts API Test Started: 2025-07-29T17:45:16.315Z
+2025-07-29T17:45:16.315Z [INFO] 📋 Testing List Contacts...
+2025-07-29T17:45:16.316Z [TEST] 🔄 GET https://people.googleapis.com/v1/people/me/connections?personFields=names,emailAddresses,phoneNumbers,organizations,metadata&pageSize=20
+2025-07-29T17:45:16.720Z [SUCCESS] ✅ List Contacts (2 contacts found)
+2025-07-29T17:45:16.720Z [INFO] Contacts found:
+2025-07-29T17:45:16.721Z [TEST]    1. Ramd (No email)
+2025-07-29T17:45:16.721Z [TEST]    2. rajashekar (banothrajkumar9959@gmail.com)
+2025-07-29T17:45:16.721Z [INFO] 👤 Testing Create Contact...
+2025-07-29T17:45:16.721Z [TEST] 🔄 POST https://people.googleapis.com/v1/people:createContact?personFields=names,emailAddresses,phoneNumbers,organizations,biographies,metadata
+2025-07-29T17:45:18.720Z [SUCCESS] ✅ Create Contact (Test Contact-1753811116721)
+2025-07-29T17:45:18.720Z [INFO] Contact created:
+2025-07-29T17:45:18.721Z [TEST]    Resource Name: people/c1107487998617378067
+2025-07-29T17:45:18.721Z [TEST]    Display Name: Test Contact-1753811116721
+2025-07-29T17:45:18.721Z [TEST]    Email: test.contact.1753811116721@example.com
+2025-07-29T17:45:18.721Z [TEST]    Phone: +1-555-0123-503
+2025-07-29T17:45:18.721Z [INFO] 📄 Testing Get Contact...
+2025-07-29T17:45:18.721Z [TEST] 🔄 GET https://people.googleapis.com/v1/people/c1107487998617378067?personFields=names,emailAddresses,phoneNumbers,organizations,biographies,metadata,addresses
+2025-07-29T17:45:18.997Z [SUCCESS] ✅ Get Contact (Test Contact-1753811116721)
+2025-07-29T17:45:18.997Z [INFO] Contact details:
+2025-07-29T17:45:18.997Z [TEST]    Name: Test Contact-1753811116721
+2025-07-29T17:45:18.997Z [TEST]    Resource Name: people/c1107487998617378067
+2025-07-29T17:45:18.997Z [TEST]    Email 1: test.contact.1753811116721@example.com (work)
+2025-07-29T17:45:18.998Z [TEST]    Phone 1: +1-555-0123-503 (mobile)
+2025-07-29T17:45:18.998Z [INFO] ✏️ Testing Update Contact...
+2025-07-29T17:45:18.998Z [TEST] 🔄 GET https://people.googleapis.com/v1/people/c1107487998617378067?personFields=names,emailAddresses,phoneNumbers,organizations,biographies,metadata
+2025-07-29T17:45:19.288Z [TEST] 🔄 PATCH https://people.googleapis.com/v1/people/c1107487998617378067:updateContact?personFields=names,emailAddresses,phoneNumbers,organizations,biographies,metadata&updatePersonFields=names,emailAddresses,organizations
+2025-07-29T17:45:20.333Z [SUCCESS] ✅ Update Contact (Updated Test Contact-1753811119288)
+2025-07-29T17:45:20.333Z [INFO] Contact updated:
+2025-07-29T17:45:20.333Z [TEST]    New Name: Updated Test Contact-1753811119288
+2025-07-29T17:45:20.333Z [TEST]    New Email: updated.test.contact.1753811119288@example.com
+2025-07-29T17:45:20.333Z [TEST]    New Organization: Updated Test Company
+2025-07-29T17:45:20.334Z [INFO] 🔍 Testing Search Contacts...
+2025-07-29T17:45:20.334Z [TEST] 🔄 GET https://people.googleapis.com/v1/people:searchContacts?query=Test&pageSize=10&readMask=names,emailAddresses,organizations
+2025-07-29T17:45:20.768Z [TEST]    Query: "Test" → 0 results
+2025-07-29T17:45:20.769Z [TEST] 🔄 GET https://people.googleapis.com/v1/people:searchContacts?query=example.com&pageSize=10&readMask=names,emailAddresses,organizations
+2025-07-29T17:45:21.177Z [TEST]    Query: "example.com" → 1 results
+2025-07-29T17:45:21.177Z [TEST]      1. Updated Test Contact-1753811119288
+2025-07-29T17:45:21.177Z [TEST] 🔄 GET https://people.googleapis.com/v1/people:searchContacts?query=Software&pageSize=10&readMask=names,emailAddresses,organizations
+2025-07-29T17:45:21.497Z [TEST]    Query: "Software" → 0 results
+2025-07-29T17:45:21.497Z [TEST] 🔄 GET https://people.googleapis.com/v1/people:searchContacts?query=Company&pageSize=10&readMask=names,emailAddresses,organizations
+2025-07-29T17:45:21.898Z [TEST]    Query: "Company" → 1 results
+2025-07-29T17:45:21.899Z [TEST]      1. Updated Test Contact-1753811119288
+2025-07-29T17:45:21.899Z [SUCCESS] ✅ Search Contacts (4 queries, 2 total results)
+2025-07-29T17:45:21.900Z [INFO] 📁 Testing List Contact Groups...
+2025-07-29T17:45:21.900Z [TEST] 🔄 GET https://people.googleapis.com/v1/contactGroups?pageSize=20
+2025-07-29T17:45:22.170Z [SUCCESS] ✅ List Contact Groups (8 groups found)
+2025-07-29T17:45:22.171Z [INFO] Contact groups found:
+2025-07-29T17:45:22.171Z [TEST]    1. starred (0 members) - SYSTEM_CONTACT_GROUP
+2025-07-29T17:45:22.171Z [TEST]    2. friends (0 members) - SYSTEM_CONTACT_GROUP
+2025-07-29T17:45:22.171Z [TEST]    3. family (0 members) - SYSTEM_CONTACT_GROUP
+2025-07-29T17:45:22.172Z [TEST]    4. coworkers (0 members) - SYSTEM_CONTACT_GROUP
+2025-07-29T17:45:22.172Z [TEST]    5. myContacts (3 members) - SYSTEM_CONTACT_GROUP
+2025-07-29T17:45:22.172Z [TEST]    6. chatBuddies (0 members) - SYSTEM_CONTACT_GROUP
+2025-07-29T17:45:22.172Z [TEST]    7. all (3 members) - SYSTEM_CONTACT_GROUP
+2025-07-29T17:45:22.172Z [TEST]    8. blocked (0 members) - SYSTEM_CONTACT_GROUP
+2025-07-29T17:45:22.173Z [INFO] 📂 Testing Create Contact Group...
+2025-07-29T17:45:22.173Z [TEST] 🔄 POST https://people.googleapis.com/v1/contactGroups
+2025-07-29T17:45:22.591Z [SUCCESS] ✅ Create Contact Group (Test Group 1753811122173)
+2025-07-29T17:45:22.592Z [INFO] Contact group created:
+2025-07-29T17:45:22.592Z [TEST]    Name: Test Group 1753811122173
+2025-07-29T17:45:22.592Z [TEST]    Resource Name: contactGroups/36f1974b0a4863bd
+2025-07-29T17:45:22.592Z [TEST]    Group Type: USER_CONTACT_GROUP
+2025-07-29T17:45:22.592Z [INFO] ✏️ Testing Update Contact Group...
+2025-07-29T17:45:22.592Z [TEST] 🔄 GET https://people.googleapis.com/v1/contactGroups/36f1974b0a4863bd
+2025-07-29T17:45:22.866Z [TEST] 🔄 PUT https://people.googleapis.com/v1/contactGroups/36f1974b0a4863bd
+2025-07-29T17:45:23.294Z [SUCCESS] ✅ Update Contact Group (Updated Test Group 1753811122866)
+2025-07-29T17:45:23.294Z [INFO] Contact group updated:
+2025-07-29T17:45:23.294Z [TEST]    New Name: Updated Test Group 1753811122866
+2025-07-29T17:45:23.295Z [INFO] 👥 Testing Batch Create Contacts...
+2025-07-29T17:45:23.296Z [TEST] 🔄 POST https://people.googleapis.com/v1/people:batchCreateContacts
+2025-07-29T17:45:25.581Z [SUCCESS] ✅ Batch Create Contacts (2 contacts created)
+2025-07-29T17:45:25.581Z [INFO] Batch contacts created:
+2025-07-29T17:45:25.582Z [TEST]    1. Batch Contact1-1753811123295
+2025-07-29T17:45:25.582Z [TEST]    2. Batch Contact2-1753811123295
+2025-07-29T17:45:25.582Z [INFO] 🧹 Cleaning up test contacts and groups...
+2025-07-29T17:45:25.583Z [TEST] 🔄 DELETE https://people.googleapis.com/v1/people/c1107487998617378067:deleteContact
+2025-07-29T17:45:26.076Z [TEST]    Deleted contact: people/c1107487998617378067
+2025-07-29T17:45:26.077Z [TEST] 🔄 DELETE https://people.googleapis.com/v1/people/c47525174878794732:deleteContact
+2025-07-29T17:45:26.661Z [TEST]    Deleted contact: people/c47525174878794732
+2025-07-29T17:45:26.662Z [TEST] 🔄 DELETE https://people.googleapis.com/v1/people/c1041987595479066732:deleteContact
+2025-07-29T17:45:27.142Z [TEST]    Deleted contact: people/c1041987595479066732
+2025-07-29T17:45:27.142Z [TEST] 🔄 DELETE https://people.googleapis.com/v1/contactGroups/36f1974b0a4863bd
+2025-07-29T17:45:27.628Z [TEST]    Deleted contact group: contactGroups/36f1974b0a4863bd
+
+🏁 Test completed: 2025-07-29T17:45:27.629Z
+Duration: 11s
+Results: 9 passed, 0 failed

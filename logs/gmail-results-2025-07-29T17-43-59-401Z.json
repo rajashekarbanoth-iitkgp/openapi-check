@@ -1,0 +1,30 @@
+{
+  "testRun": {
+    "startTime": "2025-07-29T17:43:59.401Z",
+    "endTime": "2025-07-29T17:44:07.656Z",
+    "duration": "8s",
+    "durationMs": 8255
+  },
+  "summary": {
+    "totalTests": 9,
+    "passed": 9,
+    "failed": 0,
+    "successRate": "100%"
+  },
+  "errors": [],
+  "testData": {
+    "userId": "me",
+    "testMessageIds": [
+      "198573c66e9b5442",
+      "198573b4a148e29e",
+      "19856a74d5ffa1e1"
+    ],
+    "sentMessageId": "1985748c0ed40e08",
+    "createdLabelId": "Label_3"
+  },
+  "environment": {
+    "tokenAvailable": true,
+    "nodeVersion": "v22.6.0",
+    "timestamp": "2025-07-29T17:44:07.656Z"
+  }
+}

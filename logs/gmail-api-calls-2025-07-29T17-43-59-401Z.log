@@ -1,0 +1,203 @@
+API Calls Log - Started: 2025-07-29T17:43:59.401Z
+2025-07-29T17:43:59.950Z GET https://gmail.googleapis.com/gmail/v1/users/me/profile - Status: 200 - Duration: 547ms
+{
+  "timestamp": "2025-07-29T17:43:59.950Z",
+  "method": "GET",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/profile",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 112
+  },
+  "duration": 547
+}
+---
+2025-07-29T17:44:00.518Z GET https://gmail.googleapis.com/gmail/v1/users/me/labels - Status: 200 - Duration: 565ms
+{
+  "timestamp": "2025-07-29T17:44:00.518Z",
+  "method": "GET",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/labels",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1421
+  },
+  "duration": 565
+}
+---
+2025-07-29T17:44:01.183Z POST https://gmail.googleapis.com/gmail/v1/users/me/labels - Status: 200 - Duration: 663ms
+{
+  "timestamp": "2025-07-29T17:44:01.183Z",
+  "method": "POST",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/labels",
+  "requestData": {
+    "name": "API Test Label 1753811040520",
+    "messageListVisibility": "show",
+    "labelListVisibility": "labelShow"
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 119
+  },
+  "duration": 663
+}
+---
+2025-07-29T17:44:01.658Z GET https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=10 - Status: 200 - Duration: 473ms
+{
+  "timestamp": "2025-07-29T17:44:01.658Z",
+  "method": "GET",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=10",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 638
+  },
+  "duration": 473
+}
+---
+2025-07-29T17:44:02.224Z GET https://gmail.googleapis.com/gmail/v1/users/me/messages/198573c66e9b5442 - Status: 200 - Duration: 563ms
+{
+  "timestamp": "2025-07-29T17:44:02.224Z",
+  "method": "GET",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages/198573c66e9b5442",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1334
+  },
+  "duration": 563
+}
+---
+2025-07-29T17:44:02.916Z POST https://gmail.googleapis.com/gmail/v1/users/me/messages/send - Status: 200 - Duration: 691ms
+{
+  "timestamp": "2025-07-29T17:44:02.916Z",
+  "method": "POST",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages/send",
+  "requestData": {
+    "raw": "VG86IHJhamFzaGVrYXJiYW5vdGguMjAwMUBnbWFpbC5jb20NClN1YmplY3Q6IEFQSSBUZXN0IEVtYWlsIC0gMjAyNS0wNy0yOVQxNzo0NDowMi4yMjVaDQpDb250ZW50LVR5cGU6IHRleHQvcGxhaW47IGNoYXJzZXQ9dXRmLTgNCg0KVGhpcyBpcyBhIHRlc3QgZW1haWwgc2VudCB2aWEgR21haWwgQVBJLg0KVGltZXN0YW1wOiAyMDI1LTA3LTI5VDE3OjQ0OjAyLjIyNVoNCg0KVGhpcyBtZXNzYWdlIHdhcyBnZW5lcmF0ZWQgYnkgdGhlIEdtYWlsIEFQSSB0ZXN0ZXIuDQpZb3UgY2FuIHNhZmVseSBkZWxldGUgdGhpcyBlbWFpbC4"
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 92
+  },
+  "duration": 691
+}
+---
+2025-07-29T17:44:03.354Z GET https://gmail.googleapis.com/gmail/v1/users/me/messages?q=is%3Aunread&maxResults=5 - Status: 200 - Duration: 435ms
+{
+  "timestamp": "2025-07-29T17:44:03.354Z",
+  "method": "GET",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages?q=is%3Aunread&maxResults=5",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 358
+  },
+  "duration": 435
+}
+---
+2025-07-29T17:44:03.916Z GET https://gmail.googleapis.com/gmail/v1/users/me/messages?q=from%3Agmail.com&maxResults=5 - Status: 200 - Duration: 561ms
+{
+  "timestamp": "2025-07-29T17:44:03.916Z",
+  "method": "GET",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages?q=from%3Agmail.com&maxResults=5",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 358
+  },
+  "duration": 561
+}
+---
+2025-07-29T17:44:04.353Z GET https://gmail.googleapis.com/gmail/v1/users/me/messages?q=subject%3Atest&maxResults=5 - Status: 200 - Duration: 436ms
+{
+  "timestamp": "2025-07-29T17:44:04.353Z",
+  "method": "GET",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages?q=subject%3Atest&maxResults=5",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 358
+  },
+  "duration": 436
+}
+---
+2025-07-29T17:44:04.992Z GET https://gmail.googleapis.com/gmail/v1/users/me/messages?q=has%3Aattachment&maxResults=5 - Status: 200 - Duration: 637ms
+{
+  "timestamp": "2025-07-29T17:44:04.992Z",
+  "method": "GET",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages?q=has%3Aattachment&maxResults=5",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 358
+  },
+  "duration": 637
+}
+---
+2025-07-29T17:44:05.503Z GET https://gmail.googleapis.com/gmail/v1/users/me/threads?maxResults=5 - Status: 200 - Duration: 508ms
+{
+  "timestamp": "2025-07-29T17:44:05.503Z",
+  "method": "GET",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/threads?maxResults=5",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1256
+  },
+  "duration": 508
+}
+---
+2025-07-29T17:44:06.202Z POST https://gmail.googleapis.com/gmail/v1/users/me/messages/198573c66e9b5442/modify - Status: 200 - Duration: 696ms
+{
+  "timestamp": "2025-07-29T17:44:06.202Z",
+  "method": "POST",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages/198573c66e9b5442/modify",
+  "requestData": {
+    "addLabelIds": [
+      "STARRED"
+    ],
+    "removeLabelIds": []
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 102
+  },
+  "duration": 696
+}
+---
+2025-07-29T17:44:06.938Z POST https://gmail.googleapis.com/gmail/v1/users/me/messages/198573c66e9b5442/modify - Status: 200 - Duration: 734ms
+{
+  "timestamp": "2025-07-29T17:44:06.938Z",
+  "method": "POST",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/messages/198573c66e9b5442/modify",
+  "requestData": {
+    "addLabelIds": [],
+    "removeLabelIds": [
+      "STARRED"
+    ]
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 92
+  },
+  "duration": 734
+}
+---
+2025-07-29T17:44:07.653Z DELETE https://gmail.googleapis.com/gmail/v1/users/me/labels/Label_3 - Status: 204 - Duration: 714ms
+{
+  "timestamp": "2025-07-29T17:44:07.653Z",
+  "method": "DELETE",
+  "url": "https://gmail.googleapis.com/gmail/v1/users/me/labels/Label_3",
+  "response": {
+    "status": 204,
+    "success": true,
+    "dataSize": 0
+  },
+  "duration": 714
+}
+---

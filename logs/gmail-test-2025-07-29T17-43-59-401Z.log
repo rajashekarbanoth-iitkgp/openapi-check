@@ -1,0 +1,83 @@
+🚀 Google Gmail API Test Started: 2025-07-29T17:43:59.401Z
+2025-07-29T17:43:59.403Z [INFO] 👤 Testing Get Gmail Profile...
+2025-07-29T17:43:59.403Z [TEST] 🔄 GET https://gmail.googleapis.com/gmail/v1/users/me/profile
+2025-07-29T17:43:59.952Z [SUCCESS] ✅ Get Gmail Profile
+2025-07-29T17:43:59.952Z [INFO] Gmail profile:
+2025-07-29T17:43:59.952Z [TEST]    Email: rajashekarbanoth.2001@gmail.com
+2025-07-29T17:43:59.952Z [TEST]    Messages Total: 5155
+2025-07-29T17:43:59.952Z [TEST]    Threads Total: 4880
+2025-07-29T17:43:59.952Z [TEST]    History ID: 607139
+2025-07-29T17:43:59.952Z [INFO] 🏷️ Testing List Labels...
+2025-07-29T17:43:59.953Z [TEST] 🔄 GET https://gmail.googleapis.com/gmail/v1/users/me/labels
+2025-07-29T17:44:00.519Z [SUCCESS] ✅ List Labels (15 labels found)
+2025-07-29T17:44:00.519Z [INFO] Gmail labels:
+2025-07-29T17:44:00.519Z [TEST]    - CHAT (CHAT) - Type: system
+2025-07-29T17:44:00.519Z [TEST]    - SENT (SENT) - Type: system
+2025-07-29T17:44:00.519Z [TEST]    - INBOX (INBOX) - Type: system
+2025-07-29T17:44:00.519Z [TEST]    - IMPORTANT (IMPORTANT) - Type: system
+2025-07-29T17:44:00.519Z [TEST]    - TRASH (TRASH) - Type: system
+2025-07-29T17:44:00.519Z [TEST]    - DRAFT (DRAFT) - Type: system
+2025-07-29T17:44:00.519Z [TEST]    - SPAM (SPAM) - Type: system
+2025-07-29T17:44:00.519Z [TEST]    - CATEGORY_FORUMS (CATEGORY_FORUMS) - Type: system
+2025-07-29T17:44:00.520Z [TEST]    - CATEGORY_UPDATES (CATEGORY_UPDATES) - Type: system
+2025-07-29T17:44:00.520Z [TEST]    - CATEGORY_PERSONAL (CATEGORY_PERSONAL) - Type: system
+2025-07-29T17:44:00.520Z [INFO] 🏷️ Testing Create Custom Label...
+2025-07-29T17:44:00.520Z [TEST] 🔄 POST https://gmail.googleapis.com/gmail/v1/users/me/labels
+2025-07-29T17:44:01.184Z [SUCCESS] ✅ Create Label (ID: Label_3)
+2025-07-29T17:44:01.184Z [INFO] Created label: API Test Label 1753811040520
+2025-07-29T17:44:01.184Z [INFO] 📧 Testing List Messages...
+2025-07-29T17:44:01.185Z [TEST] 🔄 GET https://gmail.googleapis.com/gmail/v1/users/me/messages?maxResults=10
+2025-07-29T17:44:01.659Z [SUCCESS] ✅ List Messages (10 messages found)
+2025-07-29T17:44:01.659Z [INFO] Recent messages:
+2025-07-29T17:44:01.660Z [TEST]    1. Message ID: 198573c66e9b5442, Thread ID: 198573c66e9b5442
+2025-07-29T17:44:01.660Z [TEST]    2. Message ID: 198573b4a148e29e, Thread ID: 198573b4a148e29e
+2025-07-29T17:44:01.660Z [TEST]    3. Message ID: 19856a74d5ffa1e1, Thread ID: 19856a74d5ffa1e1
+2025-07-29T17:44:01.660Z [TEST]    4. Message ID: 198564538c4be1e5, Thread ID: 198564538c4be1e5
+2025-07-29T17:44:01.660Z [TEST]    5. Message ID: 19856199ab4042b8, Thread ID: 19856199ab4042b8
+2025-07-29T17:44:01.661Z [INFO] 📄 Testing Get Message Details...
+2025-07-29T17:44:01.661Z [TEST] 🔄 GET https://gmail.googleapis.com/gmail/v1/users/me/messages/198573c66e9b5442
+2025-07-29T17:44:02.225Z [SUCCESS] ✅ Get Message Details
+2025-07-29T17:44:02.225Z [INFO] Message details:
+2025-07-29T17:44:02.225Z [TEST]    ID: 198573c66e9b5442
+2025-07-29T17:44:02.225Z [TEST]    Thread ID: 198573c66e9b5442
+2025-07-29T17:44:02.225Z [TEST]    From: rajashekarbanoth.2001@gmail.com
+2025-07-29T17:44:02.225Z [TEST]    Subject: API Test Email - 2025-07-29T17:30:32.644Z
+2025-07-29T17:44:02.225Z [TEST]    Date: Tue, 29 Jul 2025 10:30:33 -0700
+2025-07-29T17:44:02.225Z [TEST]    Labels: UNREAD, SENT, INBOX
+2025-07-29T17:44:02.225Z [INFO] 📤 Testing Send Email...
+2025-07-29T17:44:02.225Z [TEST] 🔄 POST https://gmail.googleapis.com/gmail/v1/users/me/messages/send
+2025-07-29T17:44:02.917Z [SUCCESS] ✅ Send Email (ID: 1985748c0ed40e08)
+2025-07-29T17:44:02.918Z [INFO] Sent email ID: 1985748c0ed40e08
+2025-07-29T17:44:02.919Z [INFO] 🔍 Testing Search Messages...
+2025-07-29T17:44:02.919Z [TEST] 🔄 GET https://gmail.googleapis.com/gmail/v1/users/me/messages?q=is%3Aunread&maxResults=5
+2025-07-29T17:44:03.355Z [TEST]    Query: "is:unread" → 5 results
+2025-07-29T17:44:03.355Z [TEST] 🔄 GET https://gmail.googleapis.com/gmail/v1/users/me/messages?q=from%3Agmail.com&maxResults=5
+2025-07-29T17:44:03.917Z [TEST]    Query: "from:gmail.com" → 5 results
+2025-07-29T17:44:03.917Z [TEST] 🔄 GET https://gmail.googleapis.com/gmail/v1/users/me/messages?q=subject%3Atest&maxResults=5
+2025-07-29T17:44:04.354Z [TEST]    Query: "subject:test" → 5 results
+2025-07-29T17:44:04.355Z [TEST] 🔄 GET https://gmail.googleapis.com/gmail/v1/users/me/messages?q=has%3Aattachment&maxResults=5
+2025-07-29T17:44:04.993Z [TEST]    Query: "has:attachment" → 5 results
+2025-07-29T17:44:04.994Z [SUCCESS] ✅ Search Messages (4 queries, 20 total results)
+2025-07-29T17:44:04.994Z [INFO] 🧵 Testing List Threads...
+2025-07-29T17:44:04.995Z [TEST] 🔄 GET https://gmail.googleapis.com/gmail/v1/users/me/threads?maxResults=5
+2025-07-29T17:44:05.504Z [SUCCESS] ✅ List Threads (5 threads found)
+2025-07-29T17:44:05.505Z [INFO] Recent threads:
+2025-07-29T17:44:05.505Z [TEST]    1. Thread ID: 1985748c0ed40e08
+2025-07-29T17:44:05.505Z [TEST]    2. Thread ID: 198573c66e9b5442
+2025-07-29T17:44:05.505Z [TEST]    3. Thread ID: 198573b4a148e29e
+2025-07-29T17:44:05.505Z [TEST]    4. Thread ID: 19856a74d5ffa1e1
+2025-07-29T17:44:05.505Z [TEST]    5. Thread ID: 198564538c4be1e5
+2025-07-29T17:44:05.506Z [INFO] 🏷️ Testing Modify Message Labels...
+2025-07-29T17:44:05.506Z [TEST] 🔄 POST https://gmail.googleapis.com/gmail/v1/users/me/messages/198573c66e9b5442/modify
+2025-07-29T17:44:06.203Z [SUCCESS] ✅ Modify Message Labels (Added STARRED)
+2025-07-29T17:44:06.203Z [INFO] Modified message labels for: 198573c66e9b5442
+2025-07-29T17:44:06.203Z [INFO] 🧹 Cleaning up...
+2025-07-29T17:44:06.204Z [TEST] 🔄 POST https://gmail.googleapis.com/gmail/v1/users/me/messages/198573c66e9b5442/modify
+2025-07-29T17:44:06.939Z [TEST]    Removed star from message: 198573c66e9b5442
+2025-07-29T17:44:06.939Z [TEST] 🔄 DELETE https://gmail.googleapis.com/gmail/v1/users/me/labels/Label_3
+2025-07-29T17:44:07.655Z [TEST]    Deleted label: Label_3
+2025-07-29T17:44:07.655Z [TEST]    Note: Sent email 1985748c0ed40e08 remains in your account
+
+🏁 Test completed: 2025-07-29T17:44:07.656Z
+Duration: 8s
+Results: 9 passed, 0 failed

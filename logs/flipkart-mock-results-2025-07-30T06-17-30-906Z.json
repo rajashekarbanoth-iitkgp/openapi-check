@@ -1,0 +1,32 @@
+{
+  "testRun": {
+    "startTime": "2025-07-30T06:17:30.906Z",
+    "endTime": "2025-07-30T06:17:30.925Z",
+    "duration": "0s"
+  },
+  "summary": {
+    "validationTests": 5,
+    "mockGenerationTests": 4,
+    "passed": 10,
+    "failed": 1,
+    "errors": [
+      {
+        "test": "Data Consistency - Price Logic",
+        "details": "",
+        "timestamp": "2025-07-30T06:17:30.925Z"
+      }
+    ]
+  },
+  "testedSchemas": [
+    "ProductFeedResponseSchema",
+    "AllOffersResponseSchema",
+    "CategoryListingSchema",
+    "ProductBaseInfoSchema",
+    "OfferSchema"
+  ],
+  "sampleDataSizes": {
+    "productFeed": 1188,
+    "allOffers": 392,
+    "categoryListing": 634
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "testRun": {
+    "startTime": "2025-07-30T06:19:38.689Z",
+    "endTime": "2025-07-30T06:19:38.704Z",
+    "duration": "0s"
+  },
+  "summary": {
+    "validationTests": 5,
+    "mockGenerationTests": 4,
+    "passed": 9,
+    "failed": 3,
+    "errors": [
+      {
+        "test": "Product Feed Schema Validation",
+        "details": "Number must be less than or equal to 100000",
+        "timestamp": "2025-07-30T06:19:38.692Z"
+      },
+      {
+        "test": "Minimum Product Schema Validation",
+        "details": "Number must be greater than or equal to 100",
+        "timestamp": "2025-07-30T06:19:38.699Z"
+      },
+      {
+        "test": "Max Discount Product Schema Validation",
+        "details": "Number must be greater than or equal to 100",
+        "timestamp": "2025-07-30T06:19:38.700Z"
+      }
+    ]
+  },
+  "testedSchemas": [
+    "ProductFeedResponseSchema",
+    "AllOffersResponseSchema",
+    "CategoryListingSchema",
+    "ProductBaseInfoSchema",
+    "OfferSchema"
+  ],
+  "sampleDataSizes": {
+    "productFeed": 1188,
+    "allOffers": 392,
+    "categoryListing": 634
+  }
+}

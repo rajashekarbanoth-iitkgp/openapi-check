@@ -1,0 +1,340 @@
+API Calls Log - Started: 2025-07-29T17:45:16.315Z
+2025-07-29T17:45:16.719Z GET https://people.googleapis.com/v1/people/me/connections?personFields=names,emailAddresses,phoneNumbers,organizations,metadata&pageSize=20 - Status: 200 - Duration: 403ms
+{
+  "timestamp": "2025-07-29T17:45:16.719Z",
+  "method": "GET",
+  "url": "https://people.googleapis.com/v1/people/me/connections?personFields=names,emailAddresses,phoneNumbers,organizations,metadata&pageSize=20",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1351
+  },
+  "duration": 403
+}
+---
+2025-07-29T17:45:18.720Z POST https://people.googleapis.com/v1/people:createContact?personFields=names,emailAddresses,phoneNumbers,organizations,biographies,metadata - Status: 200 - Duration: 1999ms
+{
+  "timestamp": "2025-07-29T17:45:18.720Z",
+  "method": "POST",
+  "url": "https://people.googleapis.com/v1/people:createContact?personFields=names,emailAddresses,phoneNumbers,organizations,biographies,metadata",
+  "requestData": {
+    "names": [
+      {
+        "givenName": "Test",
+        "familyName": "Contact-1753811116721",
+        "displayName": "Test Contact-1753811116721"
+      }
+    ],
+    "emailAddresses": [
+      {
+        "value": "test.contact.1753811116721@example.com",
+        "type": "work"
+      }
+    ],
+    "phoneNumbers": [
+      {
+        "value": "+1-555-0123-503",
+        "type": "mobile"
+      }
+    ],
+    "organizations": [
+      {
+        "name": "Test Company",
+        "title": "Software Tester"
+      }
+    ],
+    "biographies": [
+      {
+        "value": "This contact was created by the API tester for testing purposes.",
+        "contentType": "TEXT_PLAIN"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1265
+  },
+  "duration": 1999
+}
+---
+2025-07-29T17:45:18.996Z GET https://people.googleapis.com/v1/people/c1107487998617378067?personFields=names,emailAddresses,phoneNumbers,organizations,biographies,metadata,addresses - Status: 200 - Duration: 275ms
+{
+  "timestamp": "2025-07-29T17:45:18.996Z",
+  "method": "GET",
+  "url": "https://people.googleapis.com/v1/people/c1107487998617378067?personFields=names,emailAddresses,phoneNumbers,organizations,biographies,metadata,addresses",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1269
+  },
+  "duration": 275
+}
+---
+2025-07-29T17:45:19.287Z GET https://people.googleapis.com/v1/people/c1107487998617378067?personFields=names,emailAddresses,phoneNumbers,organizations,biographies,metadata - Status: 200 - Duration: 289ms
+{
+  "timestamp": "2025-07-29T17:45:19.287Z",
+  "method": "GET",
+  "url": "https://people.googleapis.com/v1/people/c1107487998617378067?personFields=names,emailAddresses,phoneNumbers,organizations,biographies,metadata",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1265
+  },
+  "duration": 289
+}
+---
+2025-07-29T17:45:20.332Z PATCH https://people.googleapis.com/v1/people/c1107487998617378067:updateContact?personFields=names,emailAddresses,phoneNumbers,organizations,biographies,metadata&updatePersonFields=names,emailAddresses,organizations - Status: 200 - Duration: 1044ms
+{
+  "timestamp": "2025-07-29T17:45:20.332Z",
+  "method": "PATCH",
+  "url": "https://people.googleapis.com/v1/people/c1107487998617378067:updateContact?personFields=names,emailAddresses,phoneNumbers,organizations,biographies,metadata&updatePersonFields=names,emailAddresses,organizations",
+  "requestData": {
+    "resourceName": "people/c1107487998617378067",
+    "etag": "%EgsBAgUJCwwuNz0+PxoEAQIFByIMNlorREoxMU53Qjg9",
+    "names": [
+      {
+        "givenName": "Updated Test",
+        "familyName": "Contact-1753811119288",
+        "displayName": "Updated Test Contact-1753811119288"
+      }
+    ],
+    "emailAddresses": [
+      {
+        "value": "updated.test.contact.1753811119288@example.com",
+        "type": "work"
+      }
+    ],
+    "organizations": [
+      {
+        "name": "Updated Test Company",
+        "title": "Senior Software Tester"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1320
+  },
+  "duration": 1044
+}
+---
+2025-07-29T17:45:20.767Z GET https://people.googleapis.com/v1/people:searchContacts?query=Test&pageSize=10&readMask=names,emailAddresses,organizations - Status: 200 - Duration: 433ms
+{
+  "timestamp": "2025-07-29T17:45:20.767Z",
+  "method": "GET",
+  "url": "https://people.googleapis.com/v1/people:searchContacts?query=Test&pageSize=10&readMask=names,emailAddresses,organizations",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 2
+  },
+  "duration": 433
+}
+---
+2025-07-29T17:45:21.176Z GET https://people.googleapis.com/v1/people:searchContacts?query=example.com&pageSize=10&readMask=names,emailAddresses,organizations - Status: 200 - Duration: 408ms
+{
+  "timestamp": "2025-07-29T17:45:21.176Z",
+  "method": "GET",
+  "url": "https://people.googleapis.com/v1/people:searchContacts?query=example.com&pageSize=10&readMask=names,emailAddresses,organizations",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 818
+  },
+  "duration": 408
+}
+---
+2025-07-29T17:45:21.496Z GET https://people.googleapis.com/v1/people:searchContacts?query=Software&pageSize=10&readMask=names,emailAddresses,organizations - Status: 200 - Duration: 319ms
+{
+  "timestamp": "2025-07-29T17:45:21.496Z",
+  "method": "GET",
+  "url": "https://people.googleapis.com/v1/people:searchContacts?query=Software&pageSize=10&readMask=names,emailAddresses,organizations",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 2
+  },
+  "duration": 319
+}
+---
+2025-07-29T17:45:21.897Z GET https://people.googleapis.com/v1/people:searchContacts?query=Company&pageSize=10&readMask=names,emailAddresses,organizations - Status: 200 - Duration: 400ms
+{
+  "timestamp": "2025-07-29T17:45:21.897Z",
+  "method": "GET",
+  "url": "https://people.googleapis.com/v1/people:searchContacts?query=Company&pageSize=10&readMask=names,emailAddresses,organizations",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 818
+  },
+  "duration": 400
+}
+---
+2025-07-29T17:45:22.169Z GET https://people.googleapis.com/v1/contactGroups?pageSize=20 - Status: 200 - Duration: 269ms
+{
+  "timestamp": "2025-07-29T17:45:22.169Z",
+  "method": "GET",
+  "url": "https://people.googleapis.com/v1/contactGroups?pageSize=20",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1073
+  },
+  "duration": 269
+}
+---
+2025-07-29T17:45:22.591Z POST https://people.googleapis.com/v1/contactGroups - Status: 200 - Duration: 418ms
+{
+  "timestamp": "2025-07-29T17:45:22.591Z",
+  "method": "POST",
+  "url": "https://people.googleapis.com/v1/contactGroups",
+  "requestData": {
+    "contactGroup": {
+      "name": "Test Group 1753811122173"
+    }
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 237
+  },
+  "duration": 418
+}
+---
+2025-07-29T17:45:22.865Z GET https://people.googleapis.com/v1/contactGroups/36f1974b0a4863bd - Status: 200 - Duration: 273ms
+{
+  "timestamp": "2025-07-29T17:45:22.865Z",
+  "method": "GET",
+  "url": "https://people.googleapis.com/v1/contactGroups/36f1974b0a4863bd",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 237
+  },
+  "duration": 273
+}
+---
+2025-07-29T17:45:23.293Z PUT https://people.googleapis.com/v1/contactGroups/36f1974b0a4863bd - Status: 200 - Duration: 427ms
+{
+  "timestamp": "2025-07-29T17:45:23.293Z",
+  "method": "PUT",
+  "url": "https://people.googleapis.com/v1/contactGroups/36f1974b0a4863bd",
+  "requestData": {
+    "contactGroup": {
+      "resourceName": "contactGroups/36f1974b0a4863bd",
+      "etag": "iN6a1JgKvVs=",
+      "name": "Updated Test Group 1753811122866"
+    }
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 253
+  },
+  "duration": 427
+}
+---
+2025-07-29T17:45:25.580Z POST https://people.googleapis.com/v1/people:batchCreateContacts - Status: 200 - Duration: 2284ms
+{
+  "timestamp": "2025-07-29T17:45:25.580Z",
+  "method": "POST",
+  "url": "https://people.googleapis.com/v1/people:batchCreateContacts",
+  "requestData": {
+    "contacts": [
+      {
+        "contactPerson": {
+          "names": [
+            {
+              "givenName": "Batch",
+              "familyName": "Contact1-1753811123295",
+              "displayName": "Batch Contact 1-1753811123295"
+            }
+          ],
+          "emailAddresses": [
+            {
+              "value": "batch.contact1.1753811123295@example.com"
+            }
+          ]
+        }
+      },
+      {
+        "contactPerson": {
+          "names": [
+            {
+              "givenName": "Batch",
+              "familyName": "Contact2-1753811123295",
+              "displayName": "Batch Contact 2-1753811123295"
+            }
+          ],
+          "emailAddresses": [
+            {
+              "value": "batch.contact2.1753811123295@example.com"
+            }
+          ]
+        }
+      }
+    ],
+    "readMask": "names,emailAddresses,metadata"
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1656
+  },
+  "duration": 2284
+}
+---
+2025-07-29T17:45:26.075Z DELETE https://people.googleapis.com/v1/people/c1107487998617378067:deleteContact - Status: 200 - Duration: 492ms
+{
+  "timestamp": "2025-07-29T17:45:26.075Z",
+  "method": "DELETE",
+  "url": "https://people.googleapis.com/v1/people/c1107487998617378067:deleteContact",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 2
+  },
+  "duration": 492
+}
+---
+2025-07-29T17:45:26.660Z DELETE https://people.googleapis.com/v1/people/c47525174878794732:deleteContact - Status: 200 - Duration: 583ms
+{
+  "timestamp": "2025-07-29T17:45:26.660Z",
+  "method": "DELETE",
+  "url": "https://people.googleapis.com/v1/people/c47525174878794732:deleteContact",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 2
+  },
+  "duration": 583
+}
+---
+2025-07-29T17:45:27.140Z DELETE https://people.googleapis.com/v1/people/c1041987595479066732:deleteContact - Status: 200 - Duration: 478ms
+{
+  "timestamp": "2025-07-29T17:45:27.140Z",
+  "method": "DELETE",
+  "url": "https://people.googleapis.com/v1/people/c1041987595479066732:deleteContact",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 2
+  },
+  "duration": 478
+}
+---
+2025-07-29T17:45:27.628Z DELETE https://people.googleapis.com/v1/contactGroups/36f1974b0a4863bd - Status: 200 - Duration: 486ms
+{
+  "timestamp": "2025-07-29T17:45:27.628Z",
+  "method": "DELETE",
+  "url": "https://people.googleapis.com/v1/contactGroups/36f1974b0a4863bd",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 2
+  },
+  "duration": 486
+}
+---

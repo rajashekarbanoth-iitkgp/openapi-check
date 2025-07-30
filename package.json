@@ -1,0 +1,46 @@
+{
+  "name": "google-apis-tester",
+  "version": "1.0.0",
+  "description": "Test script for Google APIs using zod-schema-faker",
+  "main": "test-google-apis.js",
+  "type": "module",
+  "scripts": {
+    "test": "bun run test-google-apis.js",
+    "test:drive": "bun run test-google-apis.js --api=drive",
+    "test:calendar": "bun run test-google-apis.js --api=calendar",
+    "test:gmail": "bun run test-google-apis.js --api=gmail",
+    "test:contacts": "bun run test-google-apis.js --api=contacts",
+    "test:token": "bun run test-token.js",
+    "test:drive-advanced": "bun run advanced-drive-tester.js",
+    "test:calendar-advanced": "bun run advanced-calendar-tester.js",
+    "test:gmail-advanced": "bun run advanced-gmail-tester.js",
+    "test:flipkart-advanced": "bun run advanced-flipkart-tester.js",
+    "test:flipkart-mock": "bun run flipkart-mock-tester.js",
+    "test:contacts-advanced": "bun run advanced-contacts-tester.js",
+    "auth": "bun run oauth-helper.js",
+    "get-tokens": "bun run oauth-helper.js",
+    "enable-apis": "bun run enable-apis.js",
+    "check-apis": "bun run enable-apis.js"
+  },
+  "dependencies": {
+    "zod": "^3.22.4",
+    "zod-schema-faker": "^1.5.4",
+    "@faker-js/faker": "^8.3.1",
+    "axios": "^1.6.2",
+    "chalk": "^5.3.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "google-apis",
+    "testing",
+    "zod",
+    "faker"
+  ],
+  "author": "API Tester",
+  "license": "MIT"
+} 

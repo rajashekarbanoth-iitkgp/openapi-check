@@ -1,0 +1,28 @@
+{
+  "testRun": {
+    "startTime": "2025-07-29T17:45:04.403Z",
+    "endTime": "2025-07-29T17:45:13.089Z",
+    "duration": "9s",
+    "durationMs": 8686
+  },
+  "summary": {
+    "totalTests": 9,
+    "passed": 9,
+    "failed": 0,
+    "successRate": "100%"
+  },
+  "errors": [],
+  "testData": {
+    "calendarId": "primary",
+    "createdEventIds": [
+      "1u0nqq4gst5bnkikb8h67g06uo",
+      "ms22lab8ei53dhkkthvmutghes"
+    ],
+    "testEventId": "1u0nqq4gst5bnkikb8h67g06uo"
+  },
+  "environment": {
+    "tokenAvailable": true,
+    "nodeVersion": "v22.6.0",
+    "timestamp": "2025-07-29T17:45:13.089Z"
+  }
+}

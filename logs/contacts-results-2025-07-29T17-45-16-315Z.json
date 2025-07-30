@@ -1,0 +1,25 @@
+{
+  "testRun": {
+    "startTime": "2025-07-29T17:45:16.315Z",
+    "endTime": "2025-07-29T17:45:27.629Z",
+    "duration": "11s",
+    "durationMs": 11314
+  },
+  "summary": {
+    "totalTests": 9,
+    "passed": 9,
+    "failed": 0,
+    "successRate": "100%"
+  },
+  "errors": [],
+  "testData": {
+    "createdContactId": "people/c1107487998617378067",
+    "createdContactGroupId": "contactGroups/36f1974b0a4863bd",
+    "totalCreatedContacts": 3
+  },
+  "environment": {
+    "tokenAvailable": true,
+    "nodeVersion": "v22.6.0",
+    "timestamp": "2025-07-29T17:45:27.629Z"
+  }
+}

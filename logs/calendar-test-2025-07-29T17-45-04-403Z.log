@@ -1,0 +1,74 @@
+🚀 Google Calendar API Test Started: 2025-07-29T17:45:04.403Z
+2025-07-29T17:45:04.404Z [INFO] 📅 Testing List Calendars...
+2025-07-29T17:45:04.404Z [TEST] 🔄 GET https://www.googleapis.com/calendar/v3/users/me/calendarList
+2025-07-29T17:45:05.040Z [SUCCESS] ✅ List Calendars (2 calendars found)
+2025-07-29T17:45:05.040Z [INFO] Calendars found:
+2025-07-29T17:45:05.040Z [TEST]    - Holidays in India (en.indian#holiday@group.v.calendar.google.com) - Access: reader
+2025-07-29T17:45:05.040Z [TEST]    - rajashekarbanoth.2001@gmail.com (rajashekarbanoth.2001@gmail.com) - Access: owner
+2025-07-29T17:45:05.040Z [INFO] 📋 Testing Get Calendar Metadata...
+2025-07-29T17:45:05.040Z [TEST] 🔄 GET https://www.googleapis.com/calendar/v3/calendars/primary
+2025-07-29T17:45:05.716Z [SUCCESS] ✅ Get Calendar Metadata (rajashekarbanoth.2001@gmail.com)
+2025-07-29T17:45:05.717Z [INFO] Calendar metadata:
+2025-07-29T17:45:05.717Z [TEST]    Summary: rajashekarbanoth.2001@gmail.com
+2025-07-29T17:45:05.717Z [TEST]    Time Zone: UTC
+2025-07-29T17:45:05.717Z [TEST]    Description: N/A
+2025-07-29T17:45:05.717Z [TEST]    Location: N/A
+2025-07-29T17:45:05.718Z [INFO] 📝 Testing List Events...
+2025-07-29T17:45:05.718Z [TEST] 🔄 GET https://www.googleapis.com/calendar/v3/calendars/primary/events?timeMin=2025-07-22T17:45:05.718Z&timeMax=2025-08-05T17:45:05.718Z&maxResults=10&singleEvents=true&orderBy=startTime
+2025-07-29T17:45:06.328Z [SUCCESS] ✅ List Events (1 events found)
+2025-07-29T17:45:06.328Z [INFO] Events found in the next week:
+2025-07-29T17:45:06.328Z [TEST]    - Flight to Bangalore (6E 6466) (2025-07-26T16:40:00Z)
+2025-07-29T17:45:06.329Z [INFO] 📅 Testing Create Event...
+2025-07-29T17:45:06.329Z [TEST] 🔄 POST https://www.googleapis.com/calendar/v3/calendars/primary/events
+2025-07-29T17:45:06.946Z [SUCCESS] ✅ Create Event (ID: 1u0nqq4gst5bnkikb8h67g06uo)
+2025-07-29T17:45:06.946Z [INFO] Created event: API Test Event 1753811106329 at 2025-07-29T18:45:06Z
+2025-07-29T17:45:06.947Z [INFO] 📄 Testing Get Event Details...
+2025-07-29T17:45:06.947Z [TEST] 🔄 GET https://www.googleapis.com/calendar/v3/calendars/primary/events/1u0nqq4gst5bnkikb8h67g06uo
+2025-07-29T17:45:07.662Z [SUCCESS] ✅ Get Event Details (API Test Event 1753811106329)
+2025-07-29T17:45:07.663Z [INFO] Event details:
+2025-07-29T17:45:07.663Z [TEST]    Summary: API Test Event 1753811106329
+2025-07-29T17:45:07.663Z [TEST]    Start: 2025-07-29T18:45:06Z
+2025-07-29T17:45:07.663Z [TEST]    End: 2025-07-29T19:45:06Z
+2025-07-29T17:45:07.663Z [TEST]    Location: API Testing Lab
+2025-07-29T17:45:07.663Z [TEST]    Status: confirmed
+2025-07-29T17:45:07.663Z [TEST]    Created: 2025-07-29T17:45:06.000Z
+2025-07-29T17:45:07.664Z [INFO] ✏️ Testing Update Event...
+2025-07-29T17:45:07.664Z [TEST] 🔄 PATCH https://www.googleapis.com/calendar/v3/calendars/primary/events/1u0nqq4gst5bnkikb8h67g06uo
+2025-07-29T17:45:08.786Z [SUCCESS] ✅ Update Event (New title: Updated API Test Event 1753811107664)
+2025-07-29T17:45:08.787Z [INFO] Update applied: {
+  "summary": "Updated API Test Event 1753811107664",
+  "description": "This event was updated by the API tester",
+  "location": "Updated API Testing Lab",
+  "colorId": "2"
+}
+2025-07-29T17:45:08.787Z [INFO] 🔄 Testing Create Recurring Event...
+2025-07-29T17:45:08.787Z [TEST] 🔄 POST https://www.googleapis.com/calendar/v3/calendars/primary/events
+2025-07-29T17:45:09.414Z [SUCCESS] ✅ Create Recurring Event (ID: ms22lab8ei53dhkkthvmutghes)
+2025-07-29T17:45:09.414Z [INFO] Created recurring event: Weekly API Test Meeting 1753811108787
+2025-07-29T17:45:09.414Z [INFO] Recurrence: RRULE:FREQ=WEEKLY;COUNT=3
+2025-07-29T17:45:09.414Z [INFO] 🔍 Testing Search Events...
+2025-07-29T17:45:09.414Z [TEST] 🔄 GET https://www.googleapis.com/calendar/v3/calendars/primary/events?q=test&maxResults=5
+2025-07-29T17:45:10.018Z [TEST]    Query: "test" → 3 results
+2025-07-29T17:45:10.018Z [TEST] 🔄 GET https://www.googleapis.com/calendar/v3/calendars/primary/events?q=meeting&maxResults=5
+2025-07-29T17:45:10.556Z [TEST]    Query: "meeting" → 4 results
+2025-07-29T17:45:10.556Z [TEST] 🔄 GET https://www.googleapis.com/calendar/v3/calendars/primary/events?q=API&maxResults=5
+2025-07-29T17:45:11.094Z [TEST]    Query: "API" → 2 results
+2025-07-29T17:45:11.094Z [SUCCESS] ✅ Search Events (3 queries, 9 total results)
+2025-07-29T17:45:11.095Z [INFO] ⚙️ Testing Get Calendar Settings...
+2025-07-29T17:45:11.095Z [TEST] 🔄 GET https://www.googleapis.com/calendar/v3/users/me/settings
+2025-07-29T17:45:11.569Z [SUCCESS] ✅ Get Calendar Settings (13 settings)
+2025-07-29T17:45:11.570Z [INFO] Calendar settings:
+2025-07-29T17:45:11.570Z [TEST]    autoAddHangouts: true
+2025-07-29T17:45:11.570Z [TEST]    defaultEventLength: 60
+2025-07-29T17:45:11.570Z [TEST]    dateFieldOrder: MDY
+2025-07-29T17:45:11.570Z [TEST]    weekStart: 0
+2025-07-29T17:45:11.570Z [TEST]    format24HourTime: false
+2025-07-29T17:45:11.570Z [INFO] 🧹 Cleaning up test events...
+2025-07-29T17:45:11.570Z [TEST] 🔄 DELETE https://www.googleapis.com/calendar/v3/calendars/primary/events/1u0nqq4gst5bnkikb8h67g06uo
+2025-07-29T17:45:12.273Z [TEST]    Deleted event: 1u0nqq4gst5bnkikb8h67g06uo
+2025-07-29T17:45:12.273Z [TEST] 🔄 DELETE https://www.googleapis.com/calendar/v3/calendars/primary/events/ms22lab8ei53dhkkthvmutghes
+2025-07-29T17:45:13.088Z [TEST]    Deleted event: ms22lab8ei53dhkkthvmutghes
+
+🏁 Test completed: 2025-07-29T17:45:13.089Z
+Duration: 9s
+Results: 9 passed, 0 failed

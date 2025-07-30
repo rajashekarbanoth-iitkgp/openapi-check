@@ -1,0 +1,25 @@
+{
+  "testRun": {
+    "startTime": "2025-07-29T17:44:43.572Z",
+    "endTime": "2025-07-29T17:44:57.529Z",
+    "duration": "14s",
+    "durationMs": 13957
+  },
+  "summary": {
+    "totalTests": 10,
+    "passed": 10,
+    "failed": 0,
+    "successRate": "100%"
+  },
+  "errors": [],
+  "testFiles": {
+    "createdFileId": "10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE",
+    "copiedFileId": "1zV2nAg-YZgzDYteL5di-02tm1sSfaZB9",
+    "folderId": "1WN9nqObvtbic_CUS3wWE5s3jgHsK5nzX"
+  },
+  "environment": {
+    "tokenAvailable": true,
+    "nodeVersion": "v22.6.0",
+    "timestamp": "2025-07-29T17:44:57.529Z"
+  }
+}

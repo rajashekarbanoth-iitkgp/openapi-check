@@ -1,0 +1,229 @@
+API Calls Log - Started: 2025-07-29T17:44:43.572Z
+2025-07-29T17:44:44.758Z GET https://www.googleapis.com/drive/v3/files?pageSize=10&fields=files(id,name,mimeType,size,createdTime,modifiedTime,parents) - Status: 200 - Duration: 1185ms
+{
+  "timestamp": "2025-07-29T17:44:44.758Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/drive/v3/files?pageSize=10&fields=files(id,name,mimeType,size,createdTime,modifiedTime,parents)",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 2297
+  },
+  "duration": 1185
+}
+---
+2025-07-29T17:44:45.851Z POST https://www.googleapis.com/drive/v3/files - Status: 200 - Duration: 1091ms
+{
+  "timestamp": "2025-07-29T17:44:45.851Z",
+  "method": "POST",
+  "url": "https://www.googleapis.com/drive/v3/files",
+  "requestData": {
+    "name": "Test File 1753811084760.txt",
+    "parents": []
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 123
+  },
+  "duration": 1091
+}
+---
+2025-07-29T17:44:46.256Z GET https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE?fields=id,name,mimeType,size,createdTime,modifiedTime,parents,permissions - Status: 200 - Duration: 402ms
+{
+  "timestamp": "2025-07-29T17:44:46.256Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE?fields=id,name,mimeType,size,createdTime,modifiedTime,parents,permissions",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 561
+  },
+  "duration": 402
+}
+---
+2025-07-29T17:44:46.977Z PATCH https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE - Status: 200 - Duration: 718ms
+{
+  "timestamp": "2025-07-29T17:44:46.977Z",
+  "method": "PATCH",
+  "url": "https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE",
+  "requestData": {
+    "name": "Updated Test File 1753811086259.txt",
+    "description": "This file was updated by the API tester"
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 131
+  },
+  "duration": 718
+}
+---
+2025-07-29T17:44:50.150Z POST https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE/copy - Status: 200 - Duration: 3171ms
+{
+  "timestamp": "2025-07-29T17:44:50.150Z",
+  "method": "POST",
+  "url": "https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE/copy",
+  "requestData": {
+    "name": "Copy of Test File 1753811086979.txt"
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 131
+  },
+  "duration": 3171
+}
+---
+2025-07-29T17:44:50.521Z GET https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE/permissions - Status: 200 - Duration: 369ms
+{
+  "timestamp": "2025-07-29T17:44:50.521Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE/permissions",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 132
+  },
+  "duration": 369
+}
+---
+2025-07-29T17:44:51.367Z POST https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE/permissions - Status: 200 - Duration: 844ms
+{
+  "timestamp": "2025-07-29T17:44:51.367Z",
+  "method": "POST",
+  "url": "https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE/permissions",
+  "requestData": {
+    "role": "reader",
+    "type": "anyone"
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 108
+  },
+  "duration": 844
+}
+---
+2025-07-29T17:44:51.994Z GET https://www.googleapis.com/drive/v3/files?q=name%20contains%20'Test'&pageSize=5 - Status: 200 - Duration: 625ms
+{
+  "timestamp": "2025-07-29T17:44:51.994Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/drive/v3/files?q=name%20contains%20'Test'&pageSize=5",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1121
+  },
+  "duration": 625
+}
+---
+2025-07-29T17:44:52.722Z GET https://www.googleapis.com/drive/v3/files?q=mimeType%20%3D%20'text%2Fplain'&pageSize=5 - Status: 200 - Duration: 726ms
+{
+  "timestamp": "2025-07-29T17:44:52.722Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/drive/v3/files?q=mimeType%20%3D%20'text%2Fplain'&pageSize=5",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 324
+  },
+  "duration": 726
+}
+---
+2025-07-29T17:44:53.530Z GET https://www.googleapis.com/drive/v3/files?q=createdTime%20%3E%20'2024-01-01T00%3A00%3A00'&pageSize=5 - Status: 200 - Duration: 807ms
+{
+  "timestamp": "2025-07-29T17:44:53.530Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/drive/v3/files?q=createdTime%20%3E%20'2024-01-01T00%3A00%3A00'&pageSize=5",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1405
+  },
+  "duration": 807
+}
+---
+2025-07-29T17:44:54.057Z GET https://www.googleapis.com/drive/v3/files?q=parents%20in%20'root'&pageSize=5 - Status: 200 - Duration: 526ms
+{
+  "timestamp": "2025-07-29T17:44:54.057Z",
+  "method": "GET",
+  "url": "https://www.googleapis.com/drive/v3/files?q=parents%20in%20'root'&pageSize=5",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 1160
+  },
+  "duration": 526
+}
+---
+2025-07-29T17:44:54.859Z POST https://www.googleapis.com/drive/v3/files - Status: 200 - Duration: 800ms
+{
+  "timestamp": "2025-07-29T17:44:54.859Z",
+  "method": "POST",
+  "url": "https://www.googleapis.com/drive/v3/files",
+  "requestData": {
+    "name": "Test Folder 1753811094059",
+    "mimeType": "application/vnd.google-apps.folder"
+  },
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 145
+  },
+  "duration": 800
+}
+---
+2025-07-29T17:44:55.821Z PATCH https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE?addParents=1WN9nqObvtbic_CUS3wWE5s3jgHsK5nzX&removeParents=root - Status: 200 - Duration: 961ms
+{
+  "timestamp": "2025-07-29T17:44:55.821Z",
+  "method": "PATCH",
+  "url": "https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE?addParents=1WN9nqObvtbic_CUS3wWE5s3jgHsK5nzX&removeParents=root",
+  "requestData": {},
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 131
+  },
+  "duration": 961
+}
+---
+2025-07-29T17:44:56.444Z DELETE https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE - Status: 204 - Duration: 620ms
+{
+  "timestamp": "2025-07-29T17:44:56.444Z",
+  "method": "DELETE",
+  "url": "https://www.googleapis.com/drive/v3/files/10OjeWj3yJ-m7rltAm-fRrsALlAJ5_ecE",
+  "response": {
+    "status": 204,
+    "success": true,
+    "dataSize": 0
+  },
+  "duration": 620
+}
+---
+2025-07-29T17:44:57.010Z DELETE https://www.googleapis.com/drive/v3/files/1zV2nAg-YZgzDYteL5di-02tm1sSfaZB9 - Status: 204 - Duration: 564ms
+{
+  "timestamp": "2025-07-29T17:44:57.010Z",
+  "method": "DELETE",
+  "url": "https://www.googleapis.com/drive/v3/files/1zV2nAg-YZgzDYteL5di-02tm1sSfaZB9",
+  "response": {
+    "status": 204,
+    "success": true,
+    "dataSize": 0
+  },
+  "duration": 564
+}
+---
+2025-07-29T17:44:57.528Z DELETE https://www.googleapis.com/drive/v3/files/1WN9nqObvtbic_CUS3wWE5s3jgHsK5nzX - Status: 204 - Duration: 517ms
+{
+  "timestamp": "2025-07-29T17:44:57.528Z",
+  "method": "DELETE",
+  "url": "https://www.googleapis.com/drive/v3/files/1WN9nqObvtbic_CUS3wWE5s3jgHsK5nzX",
+  "response": {
+    "status": 204,
+    "success": true,
+    "dataSize": 0
+  },
+  "duration": 517
+}
+---

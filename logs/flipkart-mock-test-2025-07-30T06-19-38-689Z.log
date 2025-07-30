@@ -1,0 +1,12 @@
+2025-07-30T06:19:38.692Z [FAIL] Product Feed Schema Validation - Number must be less than or equal to 100000
+2025-07-30T06:19:38.692Z [PASS] All Offers Schema Validation Validated 2 fields
+2025-07-30T06:19:38.692Z [PASS] Category Listing Schema Validation Validated 3 fields
+2025-07-30T06:19:38.696Z [PASS] Product Feed Mock Generation Generated 2026 bytes
+2025-07-30T06:19:38.697Z [PASS] All Offers Mock Generation Generated 271 bytes
+2025-07-30T06:19:38.698Z [PASS] Single Product Mock Generation Generated 2684 bytes
+2025-07-30T06:19:38.699Z [PASS] Offer Mock Generation Generated 2281 bytes
+2025-07-30T06:19:38.699Z [FAIL] Minimum Product Schema Validation - Number must be greater than or equal to 100
+2025-07-30T06:19:38.700Z [FAIL] Max Discount Product Schema Validation - Number must be greater than or equal to 100
+2025-07-30T06:19:38.703Z [PASS] Data Consistency - Required Fields 
+2025-07-30T06:19:38.703Z [PASS] Data Consistency - Price Logic 
+2025-07-30T06:19:38.703Z [PASS] Data Consistency - Special Price Logic 

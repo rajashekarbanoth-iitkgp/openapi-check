@@ -1,0 +1,11 @@
+2025-07-30T06:14:08.749Z [PASS] Product Feed Schema Validation Validated 3 fields
+2025-07-30T06:14:08.750Z [PASS] All Offers Schema Validation Validated 2 fields
+2025-07-30T06:14:08.750Z [PASS] Category Listing Schema Validation Validated 3 fields
+2025-07-30T06:14:08.753Z [PASS] Product Feed Mock Generation Generated 4074 bytes
+2025-07-30T06:14:08.754Z [PASS] All Offers Mock Generation Generated 37 bytes
+2025-07-30T06:14:08.755Z [PASS] Single Product Mock Generation Generated 3584 bytes
+2025-07-30T06:14:08.756Z [PASS] Offer Mock Generation Generated 165 bytes
+2025-07-30T06:14:08.756Z [PASS] Minimum Product Schema Validation Validated 12 fields
+2025-07-30T06:14:08.756Z [PASS] Max Discount Product Schema Validation Validated 12 fields
+2025-07-30T06:14:08.764Z [PASS] Data Consistency - Required Fields 
+2025-07-30T06:14:08.765Z [FAIL] Data Consistency - Price Logic - 
