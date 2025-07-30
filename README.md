@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Google APIs Tester 🧪
 
 Comprehensive testing tool for Google APIs (Drive, Calendar, Gmail, Contacts) using [zod-schema-faker](https://www.npmjs.com/package/zod-schema-faker) for realistic test data generation.
@@ -215,3 +216,6 @@ MIT License - feel free to use and modify as needed!
 ---
 
 **Intha script nalla detailed ah test pannum! Google APIs ellam properly work aaguthu nu check pannalam. Happy testing! 🎉**
+=======
+# cenizas
+>>>>>>> 45ce635cee869fbd382fd468df354cbe5bde517a
