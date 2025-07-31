@@ -38,6 +38,36 @@ export const API_CONFIG = {
       createContact: '/v1/people:createContact',
       search: '/v1/people:searchContacts'
     }
+  },
+  
+  ADSENSE: {
+    baseUrl: 'https://www.googleapis.com/adsense/v1.4',
+    endpoints: {
+      accounts: '/accounts',
+      accountById: (accountId) => `/accounts/${accountId}`,
+      adclients: '/adclients',
+      adclientsByAccount: (accountId) => `/accounts/${accountId}/adclients`,
+      adunits: (adClientId) => `/adclients/${adClientId}/adunits`,
+      adunitById: (adClientId, adUnitId) => `/adclients/${adClientId}/adunits/${adUnitId}`,
+      adcode: (adClientId, adUnitId) => `/adclients/${adClientId}/adunits/${adUnitId}/adcode`,
+      customchannels: (adClientId) => `/adclients/${adClientId}/customchannels`,
+      customchannelById: (adClientId, customChannelId) => `/adclients/${adClientId}/customchannels/${customChannelId}`,
+      urlchannels: (adClientId) => `/adclients/${adClientId}/urlchannels`,
+      alerts: '/alerts',
+      alertsByAccount: (accountId) => `/accounts/${accountId}/alerts`,
+      payments: '/payments',
+      paymentsByAccount: (accountId) => `/accounts/${accountId}/payments`,
+      reports: '/reports',
+      reportsByAccount: (accountId) => `/accounts/${accountId}/reports`,
+      savedReports: '/reports/saved',
+      savedReportsByAccount: (accountId) => `/accounts/${accountId}/reports/saved`,
+      metadata: {
+        dimensions: '/metadata/dimensions',
+        metrics: '/metadata/metrics'
+      },
+      savedAdStyles: '/savedadstyles',
+      savedAdStylesByAccount: (accountId) => `/accounts/${accountId}/savedadstyles`
+    }
   }
 };
 
@@ -62,6 +92,10 @@ export const SCOPES = {
     'https://www.googleapis.com/auth/contacts',
     'https://www.googleapis.com/auth/contacts.readonly',
     'https://www.google.com/m8/feeds'
+  ],
+  ADSENSE: [
+    'https://www.googleapis.com/auth/adsense',
+    'https://www.googleapis.com/auth/adsense.readonly'
   ]
 };
 

@@ -18,6 +18,7 @@
     "test:flipkart-mock": "bun run flipkart-mock-tester.js",
     "test:contacts-advanced": "bun run advanced-contacts-tester.js",
     "test:1forge-advanced": "bun run advanced-1forge-tester.js",
+    "test:adsense": "bun run test-adsense-api.js",
     "auth": "bun run oauth-helper.js",
     "get-tokens": "bun run oauth-helper.js",
     "enable-apis": "bun run enable-apis.js",
