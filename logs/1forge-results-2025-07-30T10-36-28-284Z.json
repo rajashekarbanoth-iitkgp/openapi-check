@@ -1,0 +1,42 @@
+{
+  "testRun": {
+    "startTime": "2025-07-30T10:36:28.284Z",
+    "endTime": "2025-07-30T10:36:33.559Z",
+    "duration": "5s",
+    "durationMs": 5275
+  },
+  "summary": {
+    "totalTests": 8,
+    "passed": 5,
+    "failed": 3,
+    "successRate": "63%"
+  },
+  "errors": [
+    {
+      "test": "Get Forex Symbols - Schema Validation",
+      "error": "[\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"string\",\n    \"path\": [],\n    \"message\": \"Expected array, received string\"\n  }\n]",
+      "timestamp": "2025-07-30T10:36:29.767Z"
+    },
+    {
+      "test": "Get Specific Symbol Quotes",
+      "error": "No symbols available",
+      "timestamp": "2025-07-30T10:36:30.267Z"
+    },
+    {
+      "test": "Error Handling - Invalid Endpoint",
+      "error": "Expected 404 error",
+      "timestamp": "2025-07-30T10:36:30.666Z"
+    }
+  ],
+  "testData": {
+    "availableSymbols": [],
+    "sampleQuotes": [],
+    "symbolCount": 0
+  },
+  "environment": {
+    "apiKeyAvailable": false,
+    "baseUrl": "https://1forge.com/forex-quotes",
+    "nodeVersion": "v22.6.0",
+    "timestamp": "2025-07-30T10:36:33.559Z"
+  }
+}

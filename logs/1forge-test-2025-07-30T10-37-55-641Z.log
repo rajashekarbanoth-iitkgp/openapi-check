@@ -1,0 +1,37 @@
+🚀 1Forge Finance API Test Started: 2025-07-30T10:37:55.641Z
+2025-07-30T10:37:55.642Z [INFO] 📈 Testing Get Available Forex Symbols...
+2025-07-30T10:37:55.642Z [TEST] 🔄 GET https://1forge.com/forex-quotes/symbols
+2025-07-30T10:37:56.540Z [ERROR] ❌ Get Forex Symbols - Schema Validation - [
+  {
+    "code": "invalid_type",
+    "expected": "array",
+    "received": "string",
+    "path": [],
+    "message": "Expected array, received string"
+  }
+]
+2025-07-30T10:37:56.540Z [INFO] 💰 Testing Get All Forex Quotes...
+2025-07-30T10:37:56.540Z [TEST] 🔄 GET https://1forge.com/forex-quotes/quotes
+2025-07-30T10:37:57.424Z [SUCCESS] ✅ Get All Forex Quotes (unknown quotes)
+2025-07-30T10:37:57.424Z [ERROR] ❌ Get Specific Symbol Quotes - No symbols available
+2025-07-30T10:37:57.425Z [INFO] 🔍 Testing Schema Validation with Mock Data...
+2025-07-30T10:37:57.426Z [SUCCESS] ✅ Symbol List Schema Validation
+2025-07-30T10:37:57.427Z [SUCCESS] ✅ Quote List Schema Validation
+2025-07-30T10:37:57.427Z [SUCCESS] ✅ Individual Quote Schema Validation
+2025-07-30T10:37:57.427Z [INFO] Schema validation completed successfully
+2025-07-30T10:37:57.427Z [INFO] ⚠️ Testing Error Handling...
+2025-07-30T10:37:57.427Z [TEST] 🔄 GET https://1forge.com/forex-quotes/invalid-endpoint
+2025-07-30T10:37:57.660Z [ERROR] ❌ Error Handling - Invalid Endpoint - Expected 404 error
+2025-07-30T10:37:57.661Z [INFO] ⚡ Testing API Performance...
+2025-07-30T10:37:57.661Z [TEST] 🔄 GET https://1forge.com/forex-quotes/symbols
+2025-07-30T10:37:57.884Z [TEST]    Run 1: 223ms
+2025-07-30T10:37:57.884Z [TEST] 🔄 GET https://1forge.com/forex-quotes/symbols
+2025-07-30T10:37:58.539Z [TEST]    Run 2: 655ms
+2025-07-30T10:37:58.540Z [TEST] 🔄 GET https://1forge.com/forex-quotes/symbols
+2025-07-30T10:37:59.061Z [TEST]    Run 3: 521ms
+2025-07-30T10:37:59.061Z [INFO] Average response time: 466.33ms
+2025-07-30T10:37:59.062Z [SUCCESS] ✅ API Performance (avg: 466.33ms)
+
+🏁 Test completed: 2025-07-30T10:37:59.062Z
+Duration: 3s
+Results: 5 passed, 3 failed

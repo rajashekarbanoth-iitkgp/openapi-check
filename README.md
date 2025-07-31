@@ -1,11 +1,10 @@
-<<<<<<< HEAD
-# Google APIs Tester 🧪
+# API Testing Suite 🧪
 
-Comprehensive testing tool for Google APIs (Drive, Calendar, Gmail, Contacts) using [zod-schema-faker](https://www.npmjs.com/package/zod-schema-faker) for realistic test data generation.
+Comprehensive testing tool for various APIs including Google APIs (Drive, Calendar, Gmail, Contacts) and Finance APIs (1Forge) using [zod-schema-faker](https://www.npmjs.com/package/zod-schema-faker) for realistic test data generation.
 
 ## Features ✨
 
-- **Complete API Testing**: Tests Google Drive, Calendar, Gmail, and Contacts APIs
+- **Complete API Testing**: Tests Google Drive, Calendar, Gmail, Contacts, and Finance APIs
 - **Schema Validation**: Uses Zod schemas to validate API responses
 - **Mock Data Generation**: Generates realistic test data using zod-schema-faker
 - **Detailed Error Reporting**: Shows exactly what went wrong and why
@@ -80,6 +79,9 @@ bun run test:gmail
 
 # Test only Google Contacts
 bun run test:contacts
+
+# Test 1Forge Finance API
+bun run test:1forge-advanced
 ```
 
 ### Using Command Line Arguments
@@ -112,6 +114,13 @@ bun run test-google-apis.js --api=contacts
 - ✅ List contacts with schema validation
 - ✅ Create contact with mock data
 - 📊 Validates contact structure and fields
+
+### 1Forge Finance API
+- ⚠️ Tests forex symbols and quotes endpoints
+- 🔍 Detects when APIs return HTML instead of JSON
+- 📝 Generates mock forex data for testing when API is unavailable
+- 📊 Validates financial data structures
+- **Note**: API appears to be discontinued/changed. See `1FORGE-API-ANALYSIS.md` for details.
 
 ## Test Output Example 📊
 

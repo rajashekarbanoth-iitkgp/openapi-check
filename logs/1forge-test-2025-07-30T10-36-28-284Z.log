@@ -1,0 +1,37 @@
+🚀 1Forge Finance API Test Started: 2025-07-30T10:36:28.284Z
+2025-07-30T10:36:28.285Z [INFO] 📈 Testing Get Available Forex Symbols...
+2025-07-30T10:36:28.285Z [TEST] 🔄 GET https://1forge.com/forex-quotes/symbols
+2025-07-30T10:36:29.767Z [ERROR] ❌ Get Forex Symbols - Schema Validation - [
+  {
+    "code": "invalid_type",
+    "expected": "array",
+    "received": "string",
+    "path": [],
+    "message": "Expected array, received string"
+  }
+]
+2025-07-30T10:36:29.768Z [INFO] 💰 Testing Get All Forex Quotes...
+2025-07-30T10:36:29.768Z [TEST] 🔄 GET https://1forge.com/forex-quotes/quotes
+2025-07-30T10:36:30.265Z [SUCCESS] ✅ Get All Forex Quotes (unknown quotes)
+2025-07-30T10:36:30.267Z [ERROR] ❌ Get Specific Symbol Quotes - No symbols available
+2025-07-30T10:36:30.267Z [INFO] 🔍 Testing Schema Validation with Mock Data...
+2025-07-30T10:36:30.268Z [SUCCESS] ✅ Symbol List Schema Validation
+2025-07-30T10:36:30.270Z [SUCCESS] ✅ Quote List Schema Validation
+2025-07-30T10:36:30.270Z [SUCCESS] ✅ Individual Quote Schema Validation
+2025-07-30T10:36:30.270Z [INFO] Schema validation completed successfully
+2025-07-30T10:36:30.270Z [INFO] ⚠️ Testing Error Handling...
+2025-07-30T10:36:30.270Z [TEST] 🔄 GET https://1forge.com/forex-quotes/invalid-endpoint
+2025-07-30T10:36:30.666Z [ERROR] ❌ Error Handling - Invalid Endpoint - Expected 404 error
+2025-07-30T10:36:30.667Z [INFO] ⚡ Testing API Performance...
+2025-07-30T10:36:30.668Z [TEST] 🔄 GET https://1forge.com/forex-quotes/symbols
+2025-07-30T10:36:31.060Z [TEST]    Run 1: 392ms
+2025-07-30T10:36:31.061Z [TEST] 🔄 GET https://1forge.com/forex-quotes/symbols
+2025-07-30T10:36:32.618Z [TEST]    Run 2: 1557ms
+2025-07-30T10:36:32.618Z [TEST] 🔄 GET https://1forge.com/forex-quotes/symbols
+2025-07-30T10:36:33.558Z [TEST]    Run 3: 940ms
+2025-07-30T10:36:33.558Z [INFO] Average response time: 963.00ms
+2025-07-30T10:36:33.558Z [SUCCESS] ✅ API Performance (avg: 963.00ms)
+
+🏁 Test completed: 2025-07-30T10:36:33.559Z
+Duration: 5s
+Results: 5 passed, 3 failed

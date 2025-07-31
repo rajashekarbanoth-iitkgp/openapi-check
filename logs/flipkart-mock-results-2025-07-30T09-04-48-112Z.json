@@ -1,0 +1,26 @@
+{
+  "testRun": {
+    "startTime": "2025-07-30T09:04:48.112Z",
+    "endTime": "2025-07-30T09:04:48.128Z",
+    "duration": "0s"
+  },
+  "summary": {
+    "validationTests": 5,
+    "mockGenerationTests": 4,
+    "passed": 12,
+    "failed": 0,
+    "errors": []
+  },
+  "testedSchemas": [
+    "ProductFeedResponseSchema",
+    "AllOffersResponseSchema",
+    "CategoryListingSchema",
+    "ProductBaseInfoSchema",
+    "OfferSchema"
+  ],
+  "sampleDataSizes": {
+    "productFeed": 1187,
+    "allOffers": 392,
+    "categoryListing": 634
+  }
+}

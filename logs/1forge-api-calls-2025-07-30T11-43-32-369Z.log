@@ -1,0 +1,141 @@
+API Calls Log - Started: 2025-07-30T11:43:32.369Z
+2025-07-30T11:43:33.333Z GET https://1forge.com/forex-quotes/symbols - Status: 200 - Duration: 963ms
+{
+  "timestamp": "2025-07-30T11:43:33.333Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/symbols",
+  "response": {
+    "status": 200,
+    "success": false,
+    "message": "API returned HTML instead of JSON - endpoint may not exist or API has changed",
+    "dataSize": 0
+  },
+  "duration": 963
+}
+---
+2025-07-30T11:43:34.062Z GET https://1forge.com/forex-quotes/quotes - Status: 200 - Duration: 728ms
+{
+  "timestamp": "2025-07-30T11:43:34.062Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/quotes",
+  "response": {
+    "status": 200,
+    "success": false,
+    "message": "API returned HTML instead of JSON - endpoint may not exist or API has changed",
+    "dataSize": 0
+  },
+  "duration": 728
+}
+---
+2025-07-30T11:43:34.285Z GET https://1forge.com/forex-quotes/quotes?pairs=EURUSD - Status: 200 - Duration: 221ms
+{
+  "timestamp": "2025-07-30T11:43:34.285Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/quotes?pairs=EURUSD",
+  "response": {
+    "status": 200,
+    "success": false,
+    "message": "API returned HTML instead of JSON - endpoint may not exist or API has changed",
+    "dataSize": 0
+  },
+  "duration": 221
+}
+---
+2025-07-30T11:43:34.502Z GET https://1forge.com/forex-quotes/quotes?pairs=GBPJPY - Status: 200 - Duration: 215ms
+{
+  "timestamp": "2025-07-30T11:43:34.502Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/quotes?pairs=GBPJPY",
+  "response": {
+    "status": 200,
+    "success": false,
+    "message": "API returned HTML instead of JSON - endpoint may not exist or API has changed",
+    "dataSize": 0
+  },
+  "duration": 215
+}
+---
+2025-07-30T11:43:34.725Z GET https://1forge.com/forex-quotes/quotes?pairs=AUDUSD - Status: 200 - Duration: 223ms
+{
+  "timestamp": "2025-07-30T11:43:34.725Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/quotes?pairs=AUDUSD",
+  "response": {
+    "status": 200,
+    "success": false,
+    "message": "API returned HTML instead of JSON - endpoint may not exist or API has changed",
+    "dataSize": 0
+  },
+  "duration": 223
+}
+---
+2025-07-30T11:43:34.951Z GET https://1forge.com/forex-quotes/invalid-endpoint - Status: 200 - Duration: 222ms
+{
+  "timestamp": "2025-07-30T11:43:34.951Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/invalid-endpoint",
+  "response": {
+    "status": 200,
+    "success": false,
+    "message": "API returned HTML instead of JSON - endpoint may not exist or API has changed",
+    "dataSize": 0
+  },
+  "duration": 222
+}
+---
+2025-07-30T11:43:35.173Z GET https://1forge.com/forex-quotes/quotes?invalid_param=test - Status: 200 - Duration: 221ms
+{
+  "timestamp": "2025-07-30T11:43:35.173Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/quotes?invalid_param=test",
+  "response": {
+    "status": 200,
+    "success": false,
+    "message": "API returned HTML instead of JSON - endpoint may not exist or API has changed",
+    "dataSize": 0
+  },
+  "duration": 221
+}
+---
+2025-07-30T11:43:35.394Z GET https://1forge.com/forex-quotes/symbols - Status: 200 - Duration: 220ms
+{
+  "timestamp": "2025-07-30T11:43:35.394Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/symbols",
+  "response": {
+    "status": 200,
+    "success": false,
+    "message": "API returned HTML instead of JSON - endpoint may not exist or API has changed",
+    "dataSize": 0
+  },
+  "duration": 220
+}
+---
+2025-07-30T11:43:35.616Z GET https://1forge.com/forex-quotes/symbols - Status: 200 - Duration: 221ms
+{
+  "timestamp": "2025-07-30T11:43:35.616Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/symbols",
+  "response": {
+    "status": 200,
+    "success": false,
+    "message": "API returned HTML instead of JSON - endpoint may not exist or API has changed",
+    "dataSize": 0
+  },
+  "duration": 221
+}
+---
+2025-07-30T11:43:35.837Z GET https://1forge.com/forex-quotes/symbols - Status: 200 - Duration: 220ms
+{
+  "timestamp": "2025-07-30T11:43:35.837Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/symbols",
+  "response": {
+    "status": 200,
+    "success": false,
+    "message": "API returned HTML instead of JSON - endpoint may not exist or API has changed",
+    "dataSize": 0
+  },
+  "duration": 220
+}
+---

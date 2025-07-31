@@ -1,0 +1,79 @@
+API Calls Log - Started: 2025-07-30T10:36:28.284Z
+2025-07-30T10:36:29.765Z GET https://1forge.com/forex-quotes/symbols - Status: 200 - Duration: 1480ms
+{
+  "timestamp": "2025-07-30T10:36:29.765Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/symbols",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 3692
+  },
+  "duration": 1480
+}
+---
+2025-07-30T10:36:30.265Z GET https://1forge.com/forex-quotes/quotes - Status: 200 - Duration: 497ms
+{
+  "timestamp": "2025-07-30T10:36:30.265Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/quotes",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 3692
+  },
+  "duration": 497
+}
+---
+2025-07-30T10:36:30.665Z GET https://1forge.com/forex-quotes/invalid-endpoint - Status: 200 - Duration: 395ms
+{
+  "timestamp": "2025-07-30T10:36:30.665Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/invalid-endpoint",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 3692
+  },
+  "duration": 395
+}
+---
+2025-07-30T10:36:31.059Z GET https://1forge.com/forex-quotes/symbols - Status: 200 - Duration: 391ms
+{
+  "timestamp": "2025-07-30T10:36:31.059Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/symbols",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 3692
+  },
+  "duration": 391
+}
+---
+2025-07-30T10:36:32.617Z GET https://1forge.com/forex-quotes/symbols - Status: 200 - Duration: 1556ms
+{
+  "timestamp": "2025-07-30T10:36:32.617Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/symbols",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 3692
+  },
+  "duration": 1556
+}
+---
+2025-07-30T10:36:33.557Z GET https://1forge.com/forex-quotes/symbols - Status: 200 - Duration: 939ms
+{
+  "timestamp": "2025-07-30T10:36:33.557Z",
+  "method": "GET",
+  "url": "https://1forge.com/forex-quotes/symbols",
+  "response": {
+    "status": 200,
+    "success": true,
+    "dataSize": 3692
+  },
+  "duration": 939
+}
+---

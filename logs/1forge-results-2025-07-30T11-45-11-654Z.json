@@ -1,0 +1,92 @@
+{
+  "testRun": {
+    "startTime": "2025-07-30T11:45:11.654Z",
+    "endTime": "2025-07-30T11:45:15.115Z",
+    "duration": "3s",
+    "durationMs": 3461
+  },
+  "summary": {
+    "totalTests": 9,
+    "passed": 5,
+    "failed": 4,
+    "successRate": "56%"
+  },
+  "errors": [
+    {
+      "test": "Get Forex Symbols",
+      "error": "200: API returned HTML instead of JSON - endpoint may not exist or API has changed",
+      "timestamp": "2025-07-30T11:45:12.562Z"
+    },
+    {
+      "test": "Get All Forex Quotes",
+      "error": "200: API returned HTML instead of JSON - endpoint may not exist or API has changed",
+      "timestamp": "2025-07-30T11:45:12.785Z"
+    },
+    {
+      "test": "Get Specific Symbol Quotes",
+      "error": "No symbols returned valid quotes",
+      "timestamp": "2025-07-30T11:45:13.452Z"
+    },
+    {
+      "test": "Error Handling - Invalid Endpoint",
+      "error": "Expected 404 error",
+      "timestamp": "2025-07-30T11:45:14.214Z"
+    }
+  ],
+  "testData": {
+    "availableSymbols": [
+      "EURUSD",
+      "GBPJPY",
+      "AUDUSD",
+      "USDJPY",
+      "GBPUSD",
+      "USDCHF",
+      "NZDUSD",
+      "EURGBP"
+    ],
+    "sampleQuotes": [
+      {
+        "symbol": "EURUSD",
+        "price": 0.9431,
+        "bid": 1.3553,
+        "ask": 2.2663,
+        "timestamp": 1753875912785
+      },
+      {
+        "symbol": "GBPJPY",
+        "price": 1.3327,
+        "bid": 1.0103,
+        "ask": 0.6477,
+        "timestamp": 1753875912785
+      },
+      {
+        "symbol": "AUDUSD",
+        "price": 1.7219,
+        "bid": 2.1006,
+        "ask": 1.0656,
+        "timestamp": 1753875912785
+      },
+      {
+        "symbol": "USDJPY",
+        "price": 0.5661,
+        "bid": 2.0513,
+        "ask": 0.5524,
+        "timestamp": 1753875912785
+      },
+      {
+        "symbol": "GBPUSD",
+        "price": 1.8523,
+        "bid": 1.8408,
+        "ask": 1.8043,
+        "timestamp": 1753875912785
+      }
+    ],
+    "symbolCount": 8
+  },
+  "environment": {
+    "authRequired": false,
+    "baseUrl": "https://1forge.com/forex-quotes",
+    "nodeVersion": "v22.6.0",
+    "timestamp": "2025-07-30T11:45:15.115Z"
+  }
+}

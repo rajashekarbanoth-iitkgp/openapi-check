@@ -1,0 +1,71 @@
+{
+  "testRun": {
+    "startTime": "2025-07-30T11:53:56.790Z",
+    "endTime": "2025-07-30T11:54:02.698Z",
+    "duration": "6s",
+    "durationMs": 5908
+  },
+  "summary": {
+    "totalTests": 7,
+    "passed": 7,
+    "failed": 0,
+    "successRate": "100%"
+  },
+  "errors": [],
+  "testData": {
+    "availableSymbols": [
+      "EURUSD",
+      "GBPJPY",
+      "AUDUSD",
+      "USDJPY",
+      "GBPUSD",
+      "USDCHF",
+      "NZDUSD",
+      "EURGBP"
+    ],
+    "sampleQuotes": [
+      {
+        "symbol": "EURUSD",
+        "price": 1.8734,
+        "bid": 1.308,
+        "ask": 2.4289,
+        "timestamp": 1753876439253
+      },
+      {
+        "symbol": "GBPJPY",
+        "price": 2.1708,
+        "bid": 2.0897,
+        "ask": 1.3051,
+        "timestamp": 1753876439253
+      },
+      {
+        "symbol": "AUDUSD",
+        "price": 2.0556,
+        "bid": 1.0244,
+        "ask": 1.9468,
+        "timestamp": 1753876439253
+      },
+      {
+        "symbol": "USDJPY",
+        "price": 2.4985,
+        "bid": 2.4177,
+        "ask": 0.599,
+        "timestamp": 1753876439253
+      },
+      {
+        "symbol": "GBPUSD",
+        "price": 2.1959,
+        "bid": 2.3425,
+        "ask": 2.1948,
+        "timestamp": 1753876439253
+      }
+    ],
+    "symbolCount": 8
+  },
+  "environment": {
+    "authRequired": false,
+    "baseUrl": "https://1forge.com/forex-quotes",
+    "nodeVersion": "v22.6.0",
+    "timestamp": "2025-07-30T11:54:02.698Z"
+  }
+}

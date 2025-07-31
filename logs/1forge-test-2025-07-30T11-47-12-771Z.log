@@ -1,0 +1,44 @@
+🚀 1Forge Finance API Test Started: 2025-07-30T11:47:12.771Z
+2025-07-30T11:47:12.773Z [INFO] 📈 Testing Get Available Forex Symbols...
+2025-07-30T11:47:12.773Z [TEST] 🔄 GET https://1forge.com/forex-quotes/symbols
+2025-07-30T11:47:15.091Z [ERROR] ❌ Get Forex Symbols - 200: API returned HTML instead of JSON - endpoint may not exist or API has changed
+2025-07-30T11:47:15.091Z [WARNING] ⚠️  The API appears to be returning a website instead of JSON data.
+2025-07-30T11:47:15.091Z [WARNING] ⚠️  This suggests the swagger documentation may be outdated or the API has changed.
+2025-07-30T11:47:15.091Z [INFO] 📝 Generating mock symbol data for testing...
+2025-07-30T11:47:15.091Z [TEST]    Generated 8 mock symbols
+2025-07-30T11:47:15.092Z [INFO] 💰 Testing Get All Forex Quotes...
+2025-07-30T11:47:15.092Z [TEST] 🔄 GET https://1forge.com/forex-quotes/quotes
+2025-07-30T11:47:15.483Z [ERROR] ❌ Get All Forex Quotes - 200: API returned HTML instead of JSON - endpoint may not exist or API has changed
+2025-07-30T11:47:15.483Z [INFO] 📝 Generating mock quote data for testing...
+2025-07-30T11:47:15.483Z [TEST]    Generated 5 mock quotes
+2025-07-30T11:47:15.484Z [INFO] 🎯 Testing Get Specific Symbol Quotes...
+2025-07-30T11:47:15.484Z [TEST] 🔄 GET https://1forge.com/forex-quotes/quotes?pairs=EURUSD
+2025-07-30T11:47:16.674Z [TEST]    ❌ EURUSD: API returned HTML instead of JSON - endpoint may not exist or API has changed
+2025-07-30T11:47:16.674Z [TEST] 🔄 GET https://1forge.com/forex-quotes/quotes?pairs=GBPJPY
+2025-07-30T11:47:17.032Z [TEST]    ❌ GBPJPY: API returned HTML instead of JSON - endpoint may not exist or API has changed
+2025-07-30T11:47:17.032Z [TEST] 🔄 GET https://1forge.com/forex-quotes/quotes?pairs=AUDUSD
+2025-07-30T11:47:17.396Z [TEST]    ❌ AUDUSD: API returned HTML instead of JSON - endpoint may not exist or API has changed
+2025-07-30T11:47:17.396Z [ERROR] ❌ Get Specific Symbol Quotes - No symbols returned valid quotes
+2025-07-30T11:47:17.397Z [INFO] 🔍 Testing Schema Validation with Mock Data...
+2025-07-30T11:47:17.399Z [SUCCESS] ✅ Symbol List Schema Validation
+2025-07-30T11:47:17.400Z [SUCCESS] ✅ Quote List Schema Validation
+2025-07-30T11:47:17.400Z [SUCCESS] ✅ Individual Quote Schema Validation
+2025-07-30T11:47:17.400Z [INFO] Schema validation completed successfully
+2025-07-30T11:47:17.400Z [INFO] ⚠️ Testing Error Handling...
+2025-07-30T11:47:17.400Z [TEST] 🔄 GET https://1forge.com/forex-quotes/invalid-endpoint
+2025-07-30T11:47:17.769Z [ERROR] ❌ Error Handling - Invalid Endpoint - Expected 404 error
+2025-07-30T11:47:17.769Z [TEST] 🔄 GET https://1forge.com/forex-quotes/quotes?invalid_param=test
+2025-07-30T11:47:18.129Z [SUCCESS] ✅ Error Handling - Invalid Parameters
+2025-07-30T11:47:18.129Z [INFO] ⚡ Testing API Performance...
+2025-07-30T11:47:18.130Z [TEST] 🔄 GET https://1forge.com/forex-quotes/symbols
+2025-07-30T11:47:18.485Z [TEST]    Run 1: 355ms
+2025-07-30T11:47:18.485Z [TEST] 🔄 GET https://1forge.com/forex-quotes/symbols
+2025-07-30T11:47:18.837Z [TEST]    Run 2: 352ms
+2025-07-30T11:47:18.837Z [TEST] 🔄 GET https://1forge.com/forex-quotes/symbols
+2025-07-30T11:47:19.176Z [TEST]    Run 3: 339ms
+2025-07-30T11:47:19.176Z [INFO] Average response time: 348.67ms
+2025-07-30T11:47:19.176Z [SUCCESS] ✅ API Performance (avg: 348.67ms)
+
+🏁 Test completed: 2025-07-30T11:47:19.177Z
+Duration: 6s
+Results: 5 passed, 4 failed

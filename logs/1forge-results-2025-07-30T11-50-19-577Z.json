@@ -1,0 +1,87 @@
+{
+  "testRun": {
+    "startTime": "2025-07-30T11:50:19.577Z",
+    "endTime": "2025-07-30T11:50:23.072Z",
+    "duration": "3s",
+    "durationMs": 3495
+  },
+  "summary": {
+    "totalTests": 10,
+    "passed": 7,
+    "failed": 3,
+    "successRate": "70%"
+  },
+  "errors": [
+    {
+      "test": "Get Forex Symbols",
+      "error": "200: API returned HTML instead of JSON - endpoint may not exist or API has changed",
+      "timestamp": "2025-07-30T11:50:20.496Z"
+    },
+    {
+      "test": "Get All Forex Quotes",
+      "error": "200: API returned HTML instead of JSON - endpoint may not exist or API has changed",
+      "timestamp": "2025-07-30T11:50:21.304Z"
+    },
+    {
+      "test": "Get Specific Symbol Quotes",
+      "error": "No symbols returned valid quotes",
+      "timestamp": "2025-07-30T11:50:21.968Z"
+    }
+  ],
+  "testData": {
+    "availableSymbols": [
+      "EURUSD",
+      "GBPJPY",
+      "AUDUSD",
+      "USDJPY",
+      "GBPUSD",
+      "USDCHF",
+      "NZDUSD",
+      "EURGBP"
+    ],
+    "sampleQuotes": [
+      {
+        "symbol": "EURUSD",
+        "price": 1.7916,
+        "bid": 2.0311,
+        "ask": 0.9595,
+        "timestamp": 1753876221304
+      },
+      {
+        "symbol": "GBPJPY",
+        "price": 2.2426,
+        "bid": 1.2578,
+        "ask": 1.4153,
+        "timestamp": 1753876221304
+      },
+      {
+        "symbol": "AUDUSD",
+        "price": 1.0002,
+        "bid": 0.6656,
+        "ask": 0.8196,
+        "timestamp": 1753876221304
+      },
+      {
+        "symbol": "USDJPY",
+        "price": 2.3024,
+        "bid": 2.0387,
+        "ask": 1.8233,
+        "timestamp": 1753876221304
+      },
+      {
+        "symbol": "GBPUSD",
+        "price": 1.4611,
+        "bid": 1.7767,
+        "ask": 0.9682,
+        "timestamp": 1753876221304
+      }
+    ],
+    "symbolCount": 8
+  },
+  "environment": {
+    "authRequired": false,
+    "baseUrl": "https://1forge.com/forex-quotes",
+    "nodeVersion": "v22.6.0",
+    "timestamp": "2025-07-30T11:50:23.072Z"
+  }
+}

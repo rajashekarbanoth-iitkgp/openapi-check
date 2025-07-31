@@ -183,6 +183,21 @@ export const ApiErrorSchema = z.object({
   })
 });
 
+// ============ 1FORGE FINANCE API SCHEMAS ============
+export const ForgeSymbolSchema = z.string().regex(/^[A-Z]{6}$/, 'Symbol should be 6 uppercase letters like EURUSD');
+
+export const ForgeSymbolListSchema = z.array(ForgeSymbolSchema);
+
+export const ForgeQuoteSchema = z.object({
+  symbol: ForgeSymbolSchema,
+  price: z.number().positive(),
+  bid: z.number().positive(),
+  ask: z.number().positive(),
+  timestamp: z.number().int().positive()
+});
+
+export const ForgeQuoteListSchema = z.array(ForgeQuoteSchema);
+
 // ============ AUTH SCHEMAS ============
 export const AuthTokenSchema = z.object({
   access_token: z.string(),
