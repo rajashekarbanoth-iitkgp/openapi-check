@@ -36,7 +36,7 @@ seed(42); // For consistent test data
 
 class AdSenseAPITester {
   constructor() {
-    this.baseUrl = 'https://www.googleapis.com/adsense/v1.4';
+    this.baseUrl = 'https://adsense.googleapis.com';
     this.accessToken = process.env.GOOGLE_ACCESS_TOKEN || '';
     this.results = {
       accounts: { passed: 0, failed: 0, errors: [] },
@@ -47,8 +47,6 @@ class AdSenseAPITester {
       alerts: { passed: 0, failed: 0, errors: [] },
       payments: { passed: 0, failed: 0, errors: [] },
       reports: { passed: 0, failed: 0, errors: [] },
-      metadata: { passed: 0, failed: 0, errors: [] },
-      savedadstyles: { passed: 0, failed: 0, errors: [] },
       savedreports: { passed: 0, failed: 0, errors: [] }
     };
     this.testAccountId = null;
@@ -82,10 +80,20 @@ class AdSenseAPITester {
   // ============ API REQUEST HELPER ============
   async makeRequest(endpoint, params = {}) {
     const url = `${this.baseUrl}${endpoint}`;
-    const requestParams = {
-      ...params,
-      access_token: this.accessToken
-    };
+    
+    // Handle arrays for explode: true parameters (like metrics, dimensions)
+    const requestParams = {};
+    for (const [key, value] of Object.entries(params)) {
+      if (Array.isArray(value)) {
+        // For arrays, we need to pass them as separate parameters with the same key
+        // This will be handled by axios paramsSerializer
+        requestParams[key] = value;
+      } else {
+        requestParams[key] = value;
+      }
+    }
+    
+    requestParams.access_token = this.accessToken;
 
     try {
       this.log(`🔄 Making request to: ${endpoint}`, 'test');
@@ -93,6 +101,20 @@ class AdSenseAPITester {
       
       const response = await axios.get(url, {
         params: requestParams,
+        paramsSerializer: {
+          serialize: (params) => {
+            const searchParams = new URLSearchParams();
+            for (const [key, value] of Object.entries(params)) {
+              if (Array.isArray(value)) {
+                // For arrays, add each item as a separate parameter with the same key
+                value.forEach(item => searchParams.append(key, item));
+              } else {
+                searchParams.append(key, value);
+              }
+            }
+            return searchParams.toString();
+          }
+        },
         timeout: 10000,
         headers: {
           'Accept': 'application/json',
@@ -138,7 +160,7 @@ class AdSenseAPITester {
     this.log('📊 Testing AdSense Accounts API...', 'info');
     
     try {
-      const result = await this.makeRequest('/accounts');
+      const result = await this.makeRequest('/v2/accounts');
       
       if (result.success) {
         // Check if it's an error response (no access token)
@@ -150,9 +172,9 @@ class AdSenseAPITester {
         // Validate response schema
         const isValid = this.validateSchema(result.data, AdSenseAccountsSchema, 'accounts response');
         
-        if (isValid && result.data.items && result.data.items.length > 0) {
+        if (isValid && result.data.accounts && result.data.accounts.length > 0) {
           // Store first account ID for other tests
-          this.testAccountId = result.data.items[0].id;
+          this.testAccountId = result.data.accounts[0].name.split('/').pop(); // Extract account ID from name
           this.log(`📋 Using test account ID: ${this.testAccountId}`, 'info');
         }
         
@@ -170,27 +192,35 @@ class AdSenseAPITester {
     this.log('📋 Testing AdSense Ad Clients API...', 'info');
     
     try {
-      const result = await this.makeRequest('/adclients');
+      // In AdSense API v2, we need to get accounts first, then adclients
+      const accountsResult = await this.makeRequest('/v2/accounts');
       
-      if (result.success) {
-        // Check if it's an error response (no access token)
-        if (result.data.error) {
-          this.logTestResult('adclients', false, new Error(`API Error: ${result.data.error.message}`));
-          return;
+      if (accountsResult.success && accountsResult.data.accounts && accountsResult.data.accounts.length > 0) {
+        const accountId = accountsResult.data.accounts[0].name.split('/').pop(); // Extract account ID from name
+        const result = await this.makeRequest(`/v2/accounts/${accountId}/adclients`);
+        
+        if (result.success) {
+          // Check if it's an error response (no access token)
+          if (result.data.error) {
+            this.logTestResult('adclients', false, new Error(`API Error: ${result.data.error.message}`));
+            return;
+          }
+          
+          // Validate response schema
+          const isValid = this.validateSchema(result.data, AdSenseAdClientsSchema, 'adclients response');
+          
+          if (isValid && result.data.adClients && result.data.adClients.length > 0) {
+            // Store first ad client ID for other tests
+            this.testAdClientId = result.data.adClients[0].name.split('/').pop(); // Extract ad client ID from name
+            this.log(`📋 Using test ad client ID: ${this.testAdClientId}`, 'info');
+          }
+          
+          this.logTestResult('adclients', isValid);
+        } else {
+          this.logTestResult('adclients', false, new Error(`${result.status}: ${result.message}`));
         }
-        
-        // Validate response schema
-        const isValid = this.validateSchema(result.data, AdSenseAdClientsSchema, 'adclients response');
-        
-        if (isValid && result.data.items && result.data.items.length > 0) {
-          // Store first ad client ID for other tests
-          this.testAdClientId = result.data.items[0].id;
-          this.log(`📋 Using test ad client ID: ${this.testAdClientId}`, 'info');
-        }
-        
-        this.logTestResult('adclients', isValid);
       } else {
-        this.logTestResult('adclients', false, new Error(`${result.status}: ${result.message}`));
+        this.logTestResult('adclients', false, new Error('No accounts found'));
       }
     } catch (error) {
       this.logTestResult('adclients', false, error);
@@ -207,7 +237,15 @@ class AdSenseAPITester {
     }
     
     try {
-      const result = await this.makeRequest(`/adclients/${this.testAdClientId}/adunits`);
+      // In AdSense API v2, we need account ID and ad client ID
+              if (!this.testAccountId) {
+          const accountsResult = await this.makeRequest('/v2/accounts');
+        if (accountsResult.success && accountsResult.data.accounts && accountsResult.data.accounts.length > 0) {
+          this.testAccountId = accountsResult.data.accounts[0].name.split('/').pop();
+        }
+      }
+      
+      const result = await this.makeRequest(`/v2/accounts/${this.testAccountId}/adclients/${this.testAdClientId}/adunits`);
       
       if (result.success) {
         // Check if it's an error response (no access token)
@@ -237,7 +275,7 @@ class AdSenseAPITester {
     }
     
     try {
-      const result = await this.makeRequest(`/adclients/${this.testAdClientId}/customchannels`);
+      const result = await this.makeRequest(`/v2/accounts/${this.testAccountId}/adclients/${this.testAdClientId}/customchannels`);
       
       if (result.success) {
         // Check if it's an error response (no access token)
@@ -267,7 +305,7 @@ class AdSenseAPITester {
     }
     
     try {
-      const result = await this.makeRequest(`/adclients/${this.testAdClientId}/urlchannels`);
+      const result = await this.makeRequest(`/v2/accounts/${this.testAccountId}/adclients/${this.testAdClientId}/urlchannels`);
       
       if (result.success) {
         // Check if it's an error response (no access token)
@@ -292,7 +330,7 @@ class AdSenseAPITester {
     this.log('⚠️ Testing AdSense Alerts API...', 'info');
     
     try {
-      const result = await this.makeRequest('/alerts');
+      const result = await this.makeRequest(`/v2/accounts/${this.testAccountId}/alerts`);
       
       if (result.success) {
         // Check if it's an error response (no access token)
@@ -317,7 +355,7 @@ class AdSenseAPITester {
     this.log('💰 Testing AdSense Payments API...', 'info');
     
     try {
-      const result = await this.makeRequest('/payments');
+      const result = await this.makeRequest(`/v2/accounts/${this.testAccountId}/payments`);
       
       if (result.success) {
         // Check if it's an error response (no access token)
@@ -346,11 +384,15 @@ class AdSenseAPITester {
       const endDate = new Date().toISOString().split('T')[0];
       const startDate = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
       
-      const result = await this.makeRequest('/reports', {
-        startDate,
-        endDate,
-        metric: ['PAGE_VIEWS', 'CLICKS'],
-        dimension: ['DATE']
+      const result = await this.makeRequest(`/v2/accounts/${this.testAccountId}/reports:generate`, {
+        'startDate.year': new Date(startDate).getFullYear(),
+        'startDate.month': new Date(startDate).getMonth() + 1,
+        'startDate.day': new Date(startDate).getDate(),
+        'endDate.year': new Date(endDate).getFullYear(),
+        'endDate.month': new Date(endDate).getMonth() + 1,
+        'endDate.day': new Date(endDate).getDate(),
+        metrics: ['PAGE_VIEWS', 'CLICKS'],
+        dimensions: ['DATE']
       });
       
       if (result.success) {
@@ -371,62 +413,14 @@ class AdSenseAPITester {
     }
   }
 
-  // ============ METADATA TESTS ============
-  async testMetadata() {
-    this.log('📊 Testing AdSense Metadata API...', 'info');
-    
-    try {
-      const result = await this.makeRequest('/metadata/dimensions');
-      
-      if (result.success) {
-        // Check if it's an error response (no access token)
-        if (result.data.error) {
-          this.logTestResult('metadata', false, new Error(`API Error: ${result.data.error.message}`));
-          return;
-        }
-        
-        // Validate response schema
-        const isValid = this.validateSchema(result.data, AdSenseMetadataSchema, 'metadata dimensions response');
-        this.logTestResult('metadata', isValid);
-      } else {
-        this.logTestResult('metadata', false, new Error(`${result.status}: ${result.message}`));
-      }
-    } catch (error) {
-      this.logTestResult('metadata', false, error);
-    }
-  }
 
-  // ============ SAVED AD STYLES TESTS ============
-  async testSavedAdStyles() {
-    this.log('🎨 Testing AdSense Saved Ad Styles API...', 'info');
-    
-    try {
-      const result = await this.makeRequest('/savedadstyles');
-      
-      if (result.success) {
-        // Check if it's an error response (no access token)
-        if (result.data.error) {
-          this.logTestResult('savedadstyles', false, new Error(`API Error: ${result.data.error.message}`));
-          return;
-        }
-        
-        // Validate response schema
-        const isValid = this.validateSchema(result.data, AdSenseSavedAdStylesSchema, 'savedadstyles response');
-        this.logTestResult('savedadstyles', isValid);
-      } else {
-        this.logTestResult('savedadstyles', false, new Error(`${result.status}: ${result.message}`));
-      }
-    } catch (error) {
-      this.logTestResult('savedadstyles', false, error);
-    }
-  }
 
   // ============ SAVED REPORTS TESTS ============
   async testSavedReports() {
     this.log('📋 Testing AdSense Saved Reports API...', 'info');
     
     try {
-      const result = await this.makeRequest('/reports/saved');
+      const result = await this.makeRequest(`/v2/accounts/${this.testAccountId}/reports/saved`);
       
       if (result.success) {
         // Check if it's an error response (no access token)
@@ -451,32 +445,46 @@ class AdSenseAPITester {
     this.log('🎭 Testing Mock Data Generation...', 'info');
     
     try {
-      // Test mock account generation
-      const mockAccount = fake(AdSenseAccountSchema);
+      // Test mock account generation with shorter strings
+      const mockAccount = fake(AdSenseAccountSchema, {
+        string: { length: { min: 5, max: 20 } }
+      });
       this.log(`Generated mock account: ${JSON.stringify(mockAccount, null, 2)}`, 'test');
       
       // Test mock ad client generation
-      const mockAdClient = fake(AdSenseAdClientSchema);
+      const mockAdClient = fake(AdSenseAdClientSchema, {
+        string: { length: { min: 5, max: 20 } }
+      });
       this.log(`Generated mock ad client: ${JSON.stringify(mockAdClient, null, 2)}`, 'test');
       
       // Test mock ad unit generation
-      const mockAdUnit = fake(AdSenseAdUnitSchema);
+      const mockAdUnit = fake(AdSenseAdUnitSchema, {
+        string: { length: { min: 5, max: 20 } }
+      });
       this.log(`Generated mock ad unit: ${JSON.stringify(mockAdUnit, null, 2)}`, 'test');
       
       // Test mock custom channel generation
-      const mockCustomChannel = fake(AdSenseCustomChannelSchema);
+      const mockCustomChannel = fake(AdSenseCustomChannelSchema, {
+        string: { length: { min: 5, max: 20 } }
+      });
       this.log(`Generated mock custom channel: ${JSON.stringify(mockCustomChannel, null, 2)}`, 'test');
       
       // Test mock alert generation
-      const mockAlert = fake(AdSenseAlertSchema);
+      const mockAlert = fake(AdSenseAlertSchema, {
+        string: { length: { min: 5, max: 50 } }
+      });
       this.log(`Generated mock alert: ${JSON.stringify(mockAlert, null, 2)}`, 'test');
       
       // Test mock payment generation
-      const mockPayment = fake(AdSensePaymentSchema);
+      const mockPayment = fake(AdSensePaymentSchema, {
+        string: { length: { min: 5, max: 20 } }
+      });
       this.log(`Generated mock payment: ${JSON.stringify(mockPayment, null, 2)}`, 'test');
       
       // Test mock report generation
-      const mockReport = fake(AdSenseReportSchema);
+      const mockReport = fake(AdSenseReportSchema, {
+        string: { length: { min: 5, max: 20 } }
+      });
       this.log(`Generated mock report: ${JSON.stringify(mockReport, null, 2)}`, 'test');
       
       this.log('✅ Mock data generation tests passed', 'success');
@@ -554,9 +562,16 @@ class AdSenseAPITester {
       
       // Mock successful report response
       const mockReportResponse = {
-        kind: 'adsense#report',
-        startDate: '2023-01-01',
-        endDate: '2023-01-07',
+        startDate: {
+          year: 2023,
+          month: 1,
+          day: 1
+        },
+        endDate: {
+          year: 2023,
+          month: 1,
+          day: 7
+        },
         totalMatchedRows: '7',
         headers: [
           { name: 'DATE', type: 'DIMENSION' },
@@ -564,11 +579,35 @@ class AdSenseAPITester {
           { name: 'CLICKS', type: 'METRIC_TALLY' }
         ],
         rows: [
-          ['2023-01-01', '1000', '50'],
-          ['2023-01-02', '1200', '60']
+          {
+            cells: [
+              { value: '2023-01-01' },
+              { value: '1000' },
+              { value: '50' }
+            ]
+          },
+          {
+            cells: [
+              { value: '2023-01-02' },
+              { value: '1200' },
+              { value: '60' }
+            ]
+          }
         ],
-        totals: ['', '2200', '110'],
-        averages: ['', '1100', '55'],
+        totals: {
+          cells: [
+            { value: '' },
+            { value: '2200' },
+            { value: '110' }
+          ]
+        },
+        averages: {
+          cells: [
+            { value: '' },
+            { value: '1100' },
+            { value: '55' }
+          ]
+        },
         warnings: []
       };
       
@@ -603,8 +642,6 @@ class AdSenseAPITester {
     await this.testAlerts();
     await this.testPayments();
     await this.testReports();
-    await this.testMetadata();
-    await this.testSavedAdStyles();
     await this.testSavedReports();
     
     this.printSummary();

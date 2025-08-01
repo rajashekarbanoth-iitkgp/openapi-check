@@ -23,7 +23,18 @@ const SCOPES = [
   'https://www.googleapis.com/auth/calendar',           // Google Calendar
   'https://www.googleapis.com/auth/gmail.modify',       // Gmail
   'https://www.googleapis.com/auth/userinfo.profile',   // User profile
-  'https://www.googleapis.com/auth/userinfo.email'      // User email
+  'https://www.googleapis.com/auth/userinfo.email',     // User email
+  'https://www.googleapis.com/auth/adsense',            // AdSense Management API (full access)
+  'https://www.googleapis.com/auth/adsense.readonly',   // AdSense Management API (read-only)
+  'https://www.googleapis.com/auth/spreadsheets',       // Google Sheets (full access)
+  'https://www.googleapis.com/auth/spreadsheets.readonly', // Google Sheets (read-only)
+  'https://www.googleapis.com/auth/documents',          // Google Docs (full access)
+  'https://www.googleapis.com/auth/documents.readonly', // Google Docs (read-only)
+  'https://www.googleapis.com/auth/youtube',            // YouTube Data API (full access)
+  'https://www.googleapis.com/auth/youtube.readonly',   // YouTube Data API (read-only)
+  'https://www.googleapis.com/auth/youtube.force-ssl',  // YouTube Data API (force SSL)
+  'https://www.googleapis.com/auth/yt-analytics.readonly',        // YouTube Analytics (read-only)
+  'https://www.googleapis.com/auth/yt-analytics-monetary.readonly' // YouTube Analytics Monetary (read-only)
 ].join(' ');
 
 class GoogleOAuthHelper {

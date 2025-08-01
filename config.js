@@ -41,7 +41,7 @@ export const API_CONFIG = {
   },
   
   ADSENSE: {
-    baseUrl: 'https://www.googleapis.com/adsense/v1.4',
+    baseUrl: 'https://adsense.googleapis.com/v2',
     endpoints: {
       accounts: '/accounts',
       accountById: (accountId) => `/accounts/${accountId}`,
