@@ -23,6 +23,32 @@
     "test:docs": "bun run test-docs-api.js",
     "test:youtube": "bun run test-youtube-api.js",
     "test:youtube-analytics": "bun run test-youtube-analytics-api.js",
+    "test:youtube-reporting": "bun run test-youtube-reporting-api.js",
+    "test:google-shopping-content": "bun run test-google-shopping-content-api.js",
+    "test:jira:all": "bun run test-jira-all-endpoints.js",
+    "jira:refresh": "bun run refresh-jira-token.js",
+               "test:quickbooks:all": "bun run test-quickbooks-all-endpoints.js",
+           "test:gmail:all": "bun run test-gmail-all-endpoints.js",
+           "test:activecampaign:all": "bun run test-activecampaign-all-endpoints.js",
+           "test:servicenow:oauth": "bun run test-servicenow-oauth.js",
+           "test:keycloak:oauth": "bun run test-keycloak-oauth.js",
+           "zoho:scope-selector": "open zoho-scope-selector.html",
+           "zoho:callback-server": "bun run zoho-oauth-callback-server.js",
+           "zoho:detect-apps": "bun run zoho-account-detector.js",
+           "zoho:detected-selector": "open zoho-scope-selector-detected.html",
+           "zoho:test-simple": "bun run test-zoho-oauth-simple.js",
+           "zoho:detect-advanced": "bun run zoho-account-detector-advanced.js",
+           "zoho:advanced-selector": "open zoho-scope-selector-advanced.html",
+           "zoho:detect-simple": "bun run zoho-simple-detector.js",
+           "zoho:simple-selector": "open zoho-scope-selector-simple.html",
+           "zoho:detect-comprehensive": "bun run zoho-comprehensive-detector.js",
+           "test:zendesk:oauth": "bun run test-zendesk-oauth.js",
+           "zendesk:callback-server": "bun run zendesk-oauth-callback-server.js",
+
+
+
+    "docs:youtube-analytics": "cat YOUTUBE_ANALYTICS_AUTOMATION.md",
+    "docs:youtube-reporting": "cat YOUTUBE_REPORTING_AUTOMATION.md",
     "setup-env": "node setup-env.js",
     "env-status": "node setup-env.js status",
     "env-setup": "node setup-env.js setup",
@@ -32,13 +58,15 @@
     "check-apis": "bun run enable-apis.js"
   },
   "dependencies": {
-    "zod": "^3.22.4",
-    "zod-schema-faker": "^1.5.4",
     "@faker-js/faker": "^8.3.1",
     "axios": "^1.6.2",
     "chalk": "^5.3.0",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2"
+    "dotenv": "^17.2.1",
+    "express": "^4.18.2",
+    "js-yaml": "^4.1.0",
+    "open": "^10.2.0",
+    "zod": "^3.22.4",
+    "zod-schema-faker": "^1.5.4"
   },
   "devDependencies": {
     "@types/node": "^20.10.4",
@@ -52,4 +80,4 @@
   ],
   "author": "API Tester",
   "license": "MIT"
-} 
+}
